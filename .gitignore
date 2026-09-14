@@ -1,0 +1,23 @@
+# Theme mặc định của WordPress core — cài lại qua kho WordPress.org, không lưu ở đây
+themes/twentytwentyfive/
+themes/twentytwentyfour/
+themes/twentytwentythree/
+themes/twentytwenty*/
+
+# Plugin bên thứ ba — cài lại qua kho WordPress.org / nhà cung cấp, không lưu ở đây
+plugins/*
+!plugins/aef-demo-apply/
+
+# Thư viện media (ảnh/video upload) — không phải code, quá nặng cho git
+uploads/
+
+# File tạm của All-in-One WP Migration / quá trình nâng cấp WP
+ai1wm-backups/
+upgrade/
+
+# Ổ dữ liệu SQLite dùng cho môi trường demo cục bộ (nếu có)
+database/
+
+# Rác hệ điều hành / editor
+.DS_Store
+Thumbs.db

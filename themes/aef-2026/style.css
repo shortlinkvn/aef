@@ -1,0 +1,52 @@
+/*
+Theme Name: AEF 2026
+Theme URI: https://aef.vn
+Author: HCMC C4IR
+Description: Theme website công Autumn Economic Forum 2026. Nghiệm thu theo DEMO/docs/YEU-CAU-THIET-KE.md. Không chứa form đăng ký.
+Version: 0.1.0
+Text Domain: aef-2026
+*/
+
+/* Site CSS is enqueued from assets/site.css (port từ DEMO). */
+.lang a{padding:3px 11px;color:#8ea6d8;font-family:var(--mono);font-size:11px;letter-spacing:.08em;display:inline-block}
+.lang a[aria-pressed="true"]{background:var(--blue);color:#fff}
+.nav-item{position:relative}
+.nav-item .nav-link{display:block;text-transform:uppercase;letter-spacing:.07em;text-align:left}
+.header{overflow:visible}
+.mega-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:48px;align-items:start}
+.mega-intro h3{font-size:clamp(26px,3vw,40px);max-width:14ch;margin:0 0 12px}
+.mega-intro p{color:var(--soft);max-width:46ch;margin:0}
+.mega-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px 28px}
+.mega-link{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+.mega-link strong{display:block;font-size:16px;color:var(--navy)}
+.mega-link span{display:block;margin-top:4px;font-size:13.5px;color:var(--soft)}
+.mega-link:hover strong{color:var(--blue)}
+.nav-item.has-mega .nav-link{cursor:pointer}
+.theme-stage{position:relative;overflow:hidden;padding:110px 0 90px;background:var(--deep);color:#fff}
+.theme-stage-photo{position:absolute;inset:0;background-size:cover;background-position:center right;opacity:.35}
+.theme-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,8,30,.94) 0%,rgba(0,26,92,.72) 48%,rgba(0,60,211,.2) 100%)}
+.theme-lac{position:absolute;inset:0;z-index:1;pointer-events:none}
+.theme-stage-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr .9fr;gap:64px;align-items:end}
+.theme-year{font-family:var(--display);font-size:clamp(18px,2vw,26px);letter-spacing:.18em;color:var(--cyan);margin:0 0 16px}
+.theme-year span{color:var(--red)}
+.theme-lockup h2{font-size:clamp(42px,6vw,86px);max-width:14ch;margin:0 0 18px}
+.theme-other{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#9dc2ff;margin:0 0 22px}
+.theme-axes{display:grid;gap:0;border-top:1px solid rgba(255,255,255,.22)}
+.theme-axis{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.18);color:#fff}
+.theme-axis span{font-family:var(--mono);font-size:12px;color:var(--red);padding-top:4px}
+.theme-axis h3{font-family:var(--body);font-size:clamp(18px,1.7vw,24px);text-transform:none;font-weight:600;margin:0 0 6px}
+.theme-axis small{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8fb6ff}
+.theme-axis:hover h3{color:var(--cyan)}
+.portrait{position:relative}
+.portrait.hue-1{background:linear-gradient(155deg,#0d2f7a,#003cd3 62%,#00c6ff)}
+.portrait.hue-2{background:linear-gradient(155deg,#3a0a12,#e71200 58%,#ff7733)}
+.portrait.hue-3{background:linear-gradient(155deg,#001a5c,#003cd3 40%,#5c9eff)}
+.portrait.hue-4{background:linear-gradient(155deg,#071428,#0b3d8c,#00c6ff)}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.portrait-mark{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-size:42px;letter-spacing:.08em;color:rgba(255,255,255,.28)}
+.mock-flag{position:absolute;left:10px;bottom:10px;padding:3px 8px;background:#fff;color:var(--navy);font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-style:normal}
+@media(max-width:1000px){.theme-stage-grid{grid-template-columns:1fr}}
+@media(max-width:1000px){.mega-grid,.mega-cols{grid-template-columns:1fr}.theme-stage-grid{grid-template-columns:1fr}}
+body.admin-bar .header{top:32px}
+body.admin-bar .util{margin-top:32px}
+@media(max-width:782px){body.admin-bar .header{top:46px}body.admin-bar .util{margin-top:46px}}

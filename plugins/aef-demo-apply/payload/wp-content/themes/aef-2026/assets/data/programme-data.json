@@ -1,0 +1,576 @@
+{
+  "schema_version": "0.1",
+  "status": "draft",
+  "source_version": "13/08/2026",
+  "notice": "Chương trình có thể được điều chỉnh. Không sử dụng dữ liệu này như thông tin công bố khi chưa phê duyệt.",
+  "sessions": [
+    {
+      "id": "AEF27-R1-S1",
+      "date": "27/10/2026",
+      "time": "08:00–09:30",
+      "room": "Phòng 01",
+      "vi": "Định vị Việt Nam và ASEAN trong chuỗi giá trị toàn cầu",
+      "en": "Repositioning Viet Nam and ASEAN in Global Value Chains",
+      "tags": [
+        "Kinh tế toàn cầu",
+        "ASEAN",
+        "Chuỗi giá trị"
+      ],
+      "short": "Khi chuỗi cung ứng được tái cấu trúc theo hướng đa dạng hóa và tăng khả năng chống chịu, Việt Nam và ASEAN đứng trước cơ hội tái định vị vai trò trong mạng lưới sản xuất, thương mại và đầu tư toàn cầu.",
+      "long": "Phiên thảo luận xem xét những chuyển dịch đang định hình lại chuỗi giá trị toàn cầu và tác động đối với Việt Nam, ASEAN. Trọng tâm là khả năng nâng cấp vị thế từ điểm đến sản xuất sang trung tâm của các hoạt động có giá trị gia tăng cao hơn; tăng liên kết nội khối; kết nối hạ tầng, logistics, công nghệ và nguồn nhân lực; đồng thời củng cố khả năng chống chịu trước các cú sốc. Phiên hướng tới trao đổi những lựa chọn chính sách và mô hình hợp tác giúp khu vực tận dụng dòng dịch chuyển đầu tư, tham gia sâu hơn vào các ngành chiến lược và tạo ra giá trị bền vững.",
+      "questions": [
+        "Các chuỗi giá trị đang dịch chuyển theo những hướng nào và đâu là cơ hội thực chất cho Việt Nam, ASEAN?",
+        "Làm thế nào để chuyển từ lợi thế chi phí sang lợi thế về công nghệ, kỹ năng và hệ sinh thái?",
+        "ASEAN cần những liên kết nào để vừa tăng khả năng chống chịu vừa nâng cấp vị thế toàn cầu?"
+      ]
+    },
+    {
+      "id": "AEF27-R2-S1",
+      "date": "27/10/2026",
+      "time": "08:00–09:30",
+      "room": "Phòng 02",
+      "vi": "Đổi mới tài chính và phát triển Trung tâm Tài chính Quốc tế",
+      "en": "Financial Innovation and Viet Nam's International Financial Centre",
+      "tags": [
+        "Tài chính",
+        "Thể chế",
+        "Trung tâm Tài chính Quốc tế"
+      ],
+      "short": "Đổi mới tài chính có thể mở rộng khả năng huy động và phân bổ nguồn lực, nhưng cần đi cùng thể chế tin cậy, hạ tầng thị trường hiện đại và năng lực quản trị rủi ro.",
+      "long": "Phiên thảo luận tập trung vào vai trò của đổi mới tài chính trong việc khơi thông dòng vốn cho tăng trưởng và phát triển một trung tâm tài chính có khả năng kết nối khu vực, quốc tế. Nội dung dự kiến bao quát các điều kiện nền tảng về thể chế, sản phẩm và dịch vụ tài chính, hạ tầng số, dữ liệu, nhân lực, quản trị rủi ro và liên kết thị trường. Từ kinh nghiệm quốc tế, phiên sẽ trao đổi cách xây dựng một hệ sinh thái vừa có sức hấp dẫn đối với nhà đầu tư, định chế tài chính và doanh nghiệp, vừa bảo đảm tính minh bạch, an toàn và khả năng thích ứng với sự thay đổi nhanh của công nghệ.",
+      "questions": [
+        "Một Trung tâm Tài chính Quốc tế cần những điều kiện nền tảng nào để tạo khác biệt và niềm tin?",
+        "Đổi mới sản phẩm, dữ liệu và công nghệ tài chính có thể cải thiện việc phân bổ vốn ra sao?",
+        "Làm thế nào để cân bằng tốc độ đổi mới với an toàn hệ thống và quản trị rủi ro?"
+      ]
+    },
+    {
+      "id": "AEF27-R3-S1",
+      "date": "27/10/2026",
+      "time": "08:00–09:30",
+      "room": "Phòng 03",
+      "vi": "Sản xuất tiên tiến: công nghệ và năng lực cạnh tranh của doanh nghiệp Việt",
+      "en": "Advanced Manufacturing: Reshaping the Competitiveness of Vietnamese Enterprises",
+      "tags": [
+        "Sản xuất tiên tiến",
+        "Doanh nghiệp",
+        "Năng lực cạnh tranh"
+      ],
+      "short": "Sản xuất tiên tiến đang thay đổi cách doanh nghiệp thiết kế sản phẩm, tổ chức nhà máy và tham gia chuỗi giá trị. Thách thức là chuyển công nghệ thành năng suất và lợi thế cạnh tranh có thể mở rộng.",
+      "long": "Phiên thảo luận phân tích cách các công nghệ sản xuất tiên tiến đang định hình lại năng lực cạnh tranh của doanh nghiệp Việt Nam. Từ tự động hóa, dữ liệu và kết nối nhà máy đến quản trị chất lượng, thiết kế và phát triển nhà cung ứng, phiên tập trung vào hành trình chuyển đổi phù hợp với năng lực của từng nhóm doanh nghiệp. Các diễn giả dự kiến trao đổi về khoảng cách công nghệ, vốn đầu tư, tiêu chuẩn, nhân lực và liên kết giữa doanh nghiệp nội địa với các tập đoàn dẫn dắt chuỗi, qua đó nhận diện những điều kiện giúp doanh nghiệp nâng cấp vị trí và tạo giá trị cao hơn.",
+      "questions": [
+        "Doanh nghiệp Việt nên ưu tiên năng lực nào trong hành trình sản xuất tiên tiến?",
+        "Làm thế nào để đầu tư công nghệ tạo ra năng suất thay vì chỉ tăng chi phí?",
+        "Cơ chế nào giúp doanh nghiệp trong nước tham gia sâu hơn vào mạng lưới nhà cung ứng toàn cầu?"
+      ]
+    },
+    {
+      "id": "AEF27-R1-S2",
+      "date": "27/10/2026",
+      "time": "09:45–10:45",
+      "room": "Phòng 01",
+      "vi": "Trí tuệ nhân tạo và quản trị siêu đô thị",
+      "en": "Artificial Intelligence and Megacity Governance",
+      "tags": [
+        "AI",
+        "Siêu đô thị",
+        "Quản trị"
+      ],
+      "short": "AI mở ra khả năng dự báo, điều phối và cung cấp dịch vụ đô thị hiệu quả hơn. Giá trị của công nghệ phụ thuộc vào dữ liệu, năng lực quản trị và niềm tin của người dân.",
+      "long": "Phiên thảo luận khám phá vai trò của trí tuệ nhân tạo trong quản trị những đô thị có quy mô lớn, mật độ cao và hệ thống hạ tầng phức tạp. Các ứng dụng có thể trải rộng từ giao thông, quy hoạch, môi trường và năng lượng đến dịch vụ công, phản ứng khẩn cấp và tương tác với người dân. Bên cạnh tiềm năng, phiên đặt ra các yêu cầu về chất lượng dữ liệu, khả năng liên thông, bảo vệ quyền riêng tư, trách nhiệm giải trình và quản trị rủi ro. Mục tiêu là nhận diện cách AI có thể hỗ trợ quyết định tốt hơn mà vẫn bảo đảm tính minh bạch, bao trùm và lấy con người làm trung tâm.",
+      "questions": [
+        "AI có thể tạo ra giá trị rõ nhất ở những bài toán quản trị đô thị nào?",
+        "Cần nền tảng dữ liệu và cơ chế phối hợp ra sao để triển khai ở quy mô siêu đô thị?",
+        "Làm thế nào để bảo đảm minh bạch, quyền riêng tư và trách nhiệm giải trình?"
+      ]
+    },
+    {
+      "id": "AEF27-R2-S2",
+      "date": "27/10/2026",
+      "time": "09:45–10:45",
+      "room": "Phòng 02",
+      "vi": "Khung chính sách phát triển kinh tế số",
+      "en": "A Policy Framework for the Digital Economy",
+      "tags": [
+        "Kinh tế số",
+        "Chính sách",
+        "Dữ liệu"
+      ],
+      "short": "Kinh tế số cần một khung chính sách vừa thúc đẩy đổi mới, cạnh tranh và đầu tư, vừa bảo vệ người dùng, dữ liệu và sự vận hành lành mạnh của thị trường.",
+      "long": "Phiên thảo luận tập trung vào những thành tố của một khung chính sách có khả năng đồng hành với tốc độ phát triển của kinh tế số. Nội dung dự kiến bao gồm quản trị dữ liệu, cạnh tranh và nền tảng số, giao dịch xuyên biên giới, bảo vệ người tiêu dùng, thử nghiệm chính sách và khả năng tiếp cận của doanh nghiệp nhỏ. Phiên sẽ xem xét cách giảm độ trễ chính sách mà không làm suy giảm an toàn và niềm tin; đồng thời trao đổi kinh nghiệm xây dựng những quy tắc rõ ràng, có khả năng tương thích quốc tế và tạo không gian cho đổi mới.",
+      "questions": [
+        "Khung chính sách nào vừa tạo không gian đổi mới vừa duy trì cạnh tranh công bằng?",
+        "Dữ liệu nên được quản trị như thế nào để hỗ trợ tăng trưởng và bảo vệ quyền lợi?",
+        "Làm thế nào để chính sách theo kịp mô hình kinh doanh và công nghệ thay đổi nhanh?"
+      ]
+    },
+    {
+      "id": "AEF27-R3-S2",
+      "date": "27/10/2026",
+      "time": "09:45–10:45",
+      "room": "Phòng 03",
+      "vi": "Trí tuệ nhân tạo trong công nghiệp: năng suất và tối ưu vận hành nhà máy",
+      "en": "Industrial AI: Productivity and Factory Optimisation",
+      "tags": [
+        "AI công nghiệp",
+        "Năng suất",
+        "Nhà máy"
+      ],
+      "short": "Từ bảo trì dự báo đến kiểm soát chất lượng và tối ưu năng lượng, AI đang mở ra những cách mới để vận hành nhà máy hiệu quả, linh hoạt và an toàn hơn.",
+      "long": "Phiên thảo luận đi sâu vào những ứng dụng AI có khả năng tạo ra giá trị đo lường được trong môi trường công nghiệp. Trọng tâm gồm tối ưu lịch sản xuất, bảo trì dự báo, kiểm soát chất lượng, quản trị năng lượng, an toàn và hỗ trợ lực lượng lao động. Bên cạnh các trường hợp ứng dụng, phiên sẽ trao đổi về dữ liệu máy móc, tích hợp với hệ thống hiện hữu, bài toán hoàn vốn, năng lực triển khai và quản trị mô hình. Mục tiêu là giúp doanh nghiệp phân biệt giữa thử nghiệm công nghệ và một lộ trình ứng dụng có thể vận hành, đo lường và mở rộng.",
+      "questions": [
+        "Những trường hợp ứng dụng AI nào mang lại giá trị sớm và có thể đo lường?",
+        "Doanh nghiệp cần chuẩn bị dữ liệu, hạ tầng và nhân lực như thế nào?",
+        "Làm sao chuyển từ dự án thử nghiệm sang triển khai ở quy mô nhà máy và chuỗi sản xuất?"
+      ]
+    },
+    {
+      "id": "AEF27-R1-S3",
+      "date": "27/10/2026",
+      "time": "11:00–12:00",
+      "room": "Phòng 01",
+      "vi": "Từ triển khai AI đến chuẩn bị nguồn nhân lực cho tương lai ngành sản xuất Việt Nam",
+      "en": "From AI Deployment to Workforce Readiness for Viet Nam's Manufacturing Future",
+      "tags": [
+        "AI",
+        "Nguồn nhân lực",
+        "Sản xuất"
+      ],
+      "short": "Chuyển đổi bằng AI không chỉ là bài toán công nghệ. Doanh nghiệp cần thiết kế lại công việc, kỹ năng và cách con người phối hợp với hệ thống thông minh.",
+      "long": "Phiên thảo luận đặt nguồn nhân lực ở trung tâm của quá trình ứng dụng AI trong sản xuất. Khi tự động hóa và hệ thống thông minh thay đổi nhiệm vụ tại nhà máy, doanh nghiệp cần dự báo nhu cầu kỹ năng, tổ chức đào tạo lại, nâng cao năng lực quản lý và xây dựng lộ trình chuyển đổi phù hợp với người lao động. Phiên dự kiến kết nối góc nhìn của doanh nghiệp, cơ sở đào tạo và cơ quan quản lý để trao đổi về tiêu chuẩn kỹ năng, mô hình học tập tại nơi làm việc, hợp tác công – tư và những cơ chế giúp lực lượng lao động tham gia chủ động vào tương lai sản xuất.",
+      "questions": [
+        "AI sẽ thay đổi những nhóm công việc và kỹ năng nào trong sản xuất?",
+        "Doanh nghiệp và cơ sở đào tạo cần phối hợp ra sao để giảm khoảng cách kỹ năng?",
+        "Làm thế nào để chuyển đổi công nghệ đi cùng cơ hội phát triển cho người lao động?"
+      ]
+    },
+    {
+      "id": "AEF27-R2-S3",
+      "date": "27/10/2026",
+      "time": "11:00–12:00",
+      "room": "Phòng 02",
+      "vi": "An toàn dữ liệu và an ninh mạng trong kỷ nguyên lượng tử",
+      "en": "Data Security and Cyber Resilience in the Quantum Era",
+      "tags": [
+        "An ninh mạng",
+        "Dữ liệu",
+        "Công nghệ lượng tử"
+      ],
+      "short": "Năng lực tính toán lượng tử đặt ra yêu cầu chuẩn bị sớm cho bảo mật dữ liệu và khả năng chống chịu mạng, ngay cả khi các tác động quy mô lớn chưa xuất hiện tức thời.",
+      "long": "Phiên thảo luận xem xét những rủi ro dài hạn mà công nghệ lượng tử có thể tạo ra đối với mã hóa, dữ liệu nhạy cảm và hạ tầng số. Trọng tâm là cách tổ chức đánh giá mức độ phơi nhiễm, phân loại tài sản thông tin, xây dựng lộ trình chuyển đổi sang các phương án bảo mật phù hợp và củng cố khả năng phục hồi trước sự cố. Phiên cũng đề cập đến nhu cầu phối hợp giữa cơ quan quản lý, doanh nghiệp công nghệ, tổ chức tài chính và các đơn vị vận hành hạ tầng thiết yếu để hình thành nhận thức chung, tiêu chuẩn và nguồn nhân lực cho giai đoạn chuyển tiếp.",
+      "questions": [
+        "Những dữ liệu và hệ thống nào cần được ưu tiên đánh giá trước rủi ro lượng tử?",
+        "Tổ chức nên bắt đầu lộ trình chuyển đổi bảo mật từ đâu?",
+        "Cần cơ chế phối hợp và tiêu chuẩn nào để tăng khả năng chống chịu ở cấp hệ sinh thái?"
+      ]
+    },
+    {
+      "id": "AEF27-R3-S3",
+      "date": "27/10/2026",
+      "time": "11:00–12:00",
+      "room": "Phòng 03",
+      "vi": "Nông nghiệp thông minh và chuỗi giá trị nông sản bền vững",
+      "en": "Smart Agriculture and Sustainable Agrifood Value Chains",
+      "tags": [
+        "Nông nghiệp thông minh",
+        "Chuỗi giá trị",
+        "Bền vững"
+      ],
+      "short": "Công nghệ có thể giúp nông nghiệp sử dụng tài nguyên hiệu quả hơn, tăng khả năng truy xuất và kết nối người sản xuất với những thị trường có yêu cầu ngày càng cao.",
+      "long": "Phiên thảo luận tập trung vào vai trò của dữ liệu, tự động hóa, cảm biến, AI và các nền tảng kết nối trong việc nâng cao năng suất, chất lượng và tính bền vững của chuỗi giá trị nông sản. Nội dung không dừng ở sản xuất, mà mở rộng sang truy xuất nguồn gốc, logistics, tài chính, tiêu chuẩn thị trường và chia sẻ giá trị giữa các tác nhân trong chuỗi. Phiên sẽ trao đổi về điều kiện để giải pháp phù hợp với nông hộ và doanh nghiệp, có khả năng mở rộng, giảm lãng phí tài nguyên và đáp ứng tốt hơn những yêu cầu về an toàn, môi trường và minh bạch.",
+      "questions": [
+        "Công nghệ nào có thể giải quyết những điểm nghẽn lớn nhất của chuỗi nông sản?",
+        "Làm thế nào để dữ liệu và truy xuất tạo thêm giá trị cho người sản xuất?",
+        "Mô hình hợp tác nào giúp giải pháp nông nghiệp thông minh được mở rộng bền vững?"
+      ]
+    },
+    {
+      "id": "AEF27-R1-S4",
+      "date": "27/10/2026",
+      "time": "13:30–14:30",
+      "room": "Phòng 01",
+      "vi": "Sản xuất thông minh, logistics và dòng vốn cho tăng trưởng",
+      "en": "Smart Manufacturing, Logistics and Capital Flows for Growth",
+      "tags": [
+        "Sản xuất thông minh",
+        "Logistics",
+        "Dòng vốn"
+      ],
+      "short": "Năng lực sản xuất, logistics và tài chính cần được kết nối như một hệ thống để dòng hàng, dữ liệu và vốn có thể vận hành hiệu quả hơn.",
+      "long": "Phiên thảo luận xem xét mối liên hệ giữa sản xuất thông minh, hạ tầng logistics và dòng vốn trong việc tạo ra các động lực tăng trưởng mới. Công nghệ có thể nâng cao hiệu quả nhà máy, nhưng giá trị chỉ được mở rộng khi doanh nghiệp kết nối tốt với mạng lưới cung ứng, kho vận, cảng, dữ liệu và nguồn tài chính phù hợp. Phiên dự kiến trao đổi về những điểm nghẽn trong liên kết hạ tầng – doanh nghiệp – vốn; vai trò của dữ liệu trong tối ưu chuỗi; và các mô hình đầu tư, tài chính có thể hỗ trợ quá trình nâng cấp công nghiệp và logistics.",
+      "questions": [
+        "Làm thế nào để kết nối chuyển đổi nhà máy với chuyển đổi toàn chuỗi logistics?",
+        "Dữ liệu có thể giúp giảm chi phí và tăng khả năng dự báo ra sao?",
+        "Những công cụ tài chính nào phù hợp với các dự án nâng cấp công nghiệp dài hạn?"
+      ]
+    },
+    {
+      "id": "AEF27-R2-S4",
+      "date": "27/10/2026",
+      "time": "13:30–14:30",
+      "room": "Phòng 02",
+      "vi": "Năng lực tự chủ về trí tuệ nhân tạo",
+      "en": "Sovereign AI Capability",
+      "tags": [
+        "Sovereign AI",
+        "Hạ tầng AI",
+        "Dữ liệu"
+      ],
+      "short": "Năng lực tự chủ AI không đồng nghĩa với phát triển mọi thứ trong phạm vi một quốc gia. Trọng tâm là khả năng lựa chọn, kiểm soát và triển khai AI phù hợp với lợi ích, dữ liệu và năng lực trong nước.",
+      "long": "Phiên thảo luận làm rõ các lớp năng lực cấu thành khả năng tự chủ về AI: dữ liệu, hạ tầng tính toán, mô hình, nhân lực, tiêu chuẩn, an toàn và hệ sinh thái ứng dụng. Trong một chuỗi công nghệ có tính toàn cầu, câu hỏi không chỉ là tự phát triển hay nhập khẩu, mà là xác định những năng lực cốt lõi cần làm chủ, những lĩnh vực nên hợp tác và cách giảm phụ thuộc có rủi ro. Phiên sẽ trao đổi về các lựa chọn chính sách, đầu tư và hợp tác nhằm xây dựng năng lực AI có trách nhiệm, phục vụ nhu cầu phát triển và khả năng cạnh tranh dài hạn.",
+      "questions": [
+        "Những lớp năng lực AI nào cần được ưu tiên làm chủ?",
+        "Làm thế nào để cân bằng tự chủ chiến lược với hợp tác và chuỗi cung ứng toàn cầu?",
+        "Đầu tư công, tư và học thuật nên được phối hợp ra sao để xây dựng hệ sinh thái AI?"
+      ]
+    },
+    {
+      "id": "AEF27-R3-S4",
+      "date": "27/10/2026",
+      "time": "13:30–14:30",
+      "room": "Phòng 03",
+      "vi": "ESG trong chiến lược phát triển doanh nghiệp",
+      "en": "ESG as a Pillar of Sustainable Corporate Strategy",
+      "tags": [
+        "ESG",
+        "Chiến lược doanh nghiệp",
+        "Bền vững"
+      ],
+      "short": "ESG đang chuyển từ một yêu cầu báo cáo thành một phần của chiến lược cạnh tranh, quản trị rủi ro và tiếp cận vốn, thị trường của doanh nghiệp.",
+      "long": "Phiên thảo luận tập trung vào cách tích hợp các yếu tố môi trường, xã hội và quản trị vào quyết định kinh doanh, thay vì xem ESG như một hoạt động tuân thủ tách biệt. Nội dung dự kiến bao gồm lựa chọn vấn đề trọng yếu, quản trị dữ liệu, trách nhiệm của lãnh đạo, liên kết với đầu tư và chuỗi cung ứng, cũng như đo lường tác động. Phiên sẽ trao đổi những cách tiếp cận phù hợp với doanh nghiệp ở các quy mô và mức độ trưởng thành khác nhau, giúp ESG hỗ trợ quản trị rủi ro, đổi mới và giá trị dài hạn.",
+      "questions": [
+        "Làm thế nào để xác định các vấn đề ESG thực sự trọng yếu với doanh nghiệp?",
+        "ESG có thể được liên kết với chiến lược, vốn và hiệu quả vận hành ra sao?",
+        "Doanh nghiệp cần tránh những rủi ro nào trong công bố và thực thi cam kết bền vững?"
+      ]
+    },
+    {
+      "id": "AEF27-R1-S5",
+      "date": "27/10/2026",
+      "time": "14:45–16:15",
+      "room": "Phòng 01",
+      "vi": "ESG và kinh tế tuần hoàn: khung chiến lược cho hệ sinh thái giá trị toàn cầu",
+      "en": "ESG and the Circular Economy: A Strategic Framework for Global Value Ecosystems",
+      "tags": [
+        "ESG",
+        "Kinh tế tuần hoàn",
+        "Hệ sinh thái giá trị"
+      ],
+      "short": "Kinh tế tuần hoàn đòi hỏi sự phối hợp vượt khỏi phạm vi một doanh nghiệp, từ thiết kế và nguyên liệu đến sản xuất, tiêu dùng, thu hồi và tái tạo giá trị.",
+      "long": "Phiên thảo luận tiếp cận ESG và kinh tế tuần hoàn ở cấp độ hệ sinh thái giá trị toàn cầu. Khi tiêu chuẩn môi trường và minh bạch chuỗi cung ứng ngày càng ảnh hưởng đến tiếp cận thị trường, doanh nghiệp cần phối hợp với nhà cung cấp, khách hàng, nhà đầu tư và cơ quan quản lý để tái thiết kế dòng vật liệu và thông tin. Phiên dự kiến trao đổi về mô hình kinh doanh tuần hoàn, truy xuất dữ liệu, tiêu chuẩn, tài chính xanh và cơ chế chia sẻ chi phí – lợi ích giữa các bên. Mục tiêu là nhận diện những khung hợp tác giúp biến yêu cầu bền vững thành năng lực cạnh tranh và cơ hội đổi mới.",
+      "questions": [
+        "Làm thế nào để chuyển từ sáng kiến đơn lẻ sang một hệ sinh thái tuần hoàn?",
+        "Dữ liệu, tiêu chuẩn và tài chính có vai trò gì trong việc mở rộng mô hình?",
+        "Các bên trong chuỗi có thể chia sẻ trách nhiệm và giá trị như thế nào?"
+      ]
+    },
+    {
+      "id": "AEF27-R2-S5",
+      "date": "27/10/2026",
+      "time": "14:45–16:15",
+      "room": "Phòng 02",
+      "vi": "Công nghiệp lưỡng dụng và các ngành công nghệ chiến lược",
+      "en": "Dual-Use Industries and Strategic Technologies",
+      "tags": [
+        "Công nghệ chiến lược",
+        "Công nghiệp lưỡng dụng",
+        "Đổi mới"
+      ],
+      "short": "Những công nghệ có khả năng ứng dụng trong cả lĩnh vực dân sự và các lĩnh vực chiến lược tạo ra cơ hội đổi mới lớn, đồng thời đặt ra yêu cầu cao về quản trị, an toàn và hợp tác có trách nhiệm.",
+      "long": "Phiên thảo luận xem xét vai trò của các ngành công nghiệp lưỡng dụng và công nghệ chiến lược trong năng lực cạnh tranh, tự chủ và đổi mới của nền kinh tế. Trọng tâm là các hệ sinh thái nghiên cứu – sản xuất – đầu tư; cơ chế chuyển giao công nghệ; phát triển doanh nghiệp và nhân lực; cùng những yêu cầu về an toàn, kiểm soát rủi ro và tuân thủ. Với tính chất nhạy cảm của lĩnh vực, phiên hướng tới đối thoại ở cấp chiến lược và hệ sinh thái, không đi vào thông tin vận hành hoặc kỹ thuật hạn chế phổ biến.",
+      "questions": [
+        "Làm thế nào để phát triển hệ sinh thái công nghệ chiến lược có trách nhiệm và có khả năng thương mại hóa?",
+        "Cơ chế nào kết nối nghiên cứu, doanh nghiệp, vốn và nhu cầu ứng dụng?",
+        "Quản trị rủi ro và hợp tác quốc tế cần được thiết kế ra sao trong lĩnh vực lưỡng dụng?"
+      ]
+    },
+    {
+      "id": "AEF27-R3-S5",
+      "date": "27/10/2026",
+      "time": "14:45–16:15",
+      "room": "Phòng 03",
+      "vi": "Tiêu dùng xanh và thị trường tiêu dùng bền vững",
+      "en": "Green Consumption and Sustainable Consumer Markets",
+      "tags": [
+        "Tiêu dùng xanh",
+        "Thị trường",
+        "Bền vững"
+      ],
+      "short": "Thị trường bền vững chỉ phát triển khi lựa chọn xanh trở nên đáng tin cậy, dễ tiếp cận và có giá trị rõ ràng đối với người tiêu dùng.",
+      "long": "Phiên thảo luận phân tích những động lực và rào cản đang định hình thị trường tiêu dùng xanh. Từ thiết kế sản phẩm, nhãn và thông tin môi trường đến giá cả, phân phối, hành vi và niềm tin, các bên cần phối hợp để thu hẹp khoảng cách giữa ý định và quyết định mua hàng. Phiên dự kiến trao đổi về tiêu chuẩn, chống tuyên bố gây hiểu nhầm, cơ chế khuyến khích, đổi mới mô hình kinh doanh và vai trò của dữ liệu trong việc giúp người tiêu dùng đưa ra lựa chọn tốt hơn. Mục tiêu là thúc đẩy một thị trường nơi tính bền vững đi cùng chất lượng, khả năng tiếp cận và cạnh tranh lành mạnh.",
+      "questions": [
+        "Điều gì khiến người tiêu dùng lựa chọn hoặc từ chối sản phẩm xanh?",
+        "Làm thế nào để thông tin bền vững trở nên minh bạch và đáng tin cậy?",
+        "Doanh nghiệp và chính sách có thể làm gì để lựa chọn xanh dễ tiếp cận hơn?"
+      ]
+    },
+    {
+      "id": "AEF27-R1-S6",
+      "date": "27/10/2026",
+      "time": "16:30–17:30",
+      "room": "Phòng 01",
+      "vi": "Phát triển hệ sinh thái công nghệ lượng tử",
+      "en": "Building a Quantum Technology Ecosystem",
+      "tags": [
+        "Công nghệ lượng tử",
+        "Hệ sinh thái",
+        "Nhân lực"
+      ],
+      "short": "Công nghệ lượng tử cần một lộ trình dài hạn kết nối nghiên cứu, nhân lực, hạ tầng, doanh nghiệp và những bài toán ứng dụng có giá trị.",
+      "long": "Phiên thảo luận tập trung vào các điều kiện cần thiết để hình thành một hệ sinh thái công nghệ lượng tử. Bên cạnh năng lực nghiên cứu nền tảng, hệ sinh thái cần chương trình đào tạo, hạ tầng dùng chung, cơ chế tài trợ dài hạn, kết nối doanh nghiệp và hợp tác quốc tế. Phiên dự kiến trao đổi về cách lựa chọn lĩnh vực ưu tiên, phát triển cộng đồng nhân lực, hỗ trợ thử nghiệm và xây dựng cầu nối giữa phòng thí nghiệm với nhu cầu công nghiệp. Mục tiêu không phải dự báo quá mức về công nghệ, mà xác định những bước chuẩn bị thực tế và có khả năng tích lũy năng lực theo thời gian.",
+      "questions": [
+        "Những năng lực nền tảng nào cần được xây dựng trước cho hệ sinh thái lượng tử?",
+        "Làm thế nào để kết nối nghiên cứu, đào tạo và nhu cầu của doanh nghiệp?",
+        "Hợp tác quốc tế có thể hỗ trợ chia sẻ hạ tầng, tri thức và tiêu chuẩn ra sao?"
+      ]
+    },
+    {
+      "id": "AEF27-R2-S6",
+      "date": "27/10/2026",
+      "time": "16:30–17:30",
+      "room": "Phòng 02",
+      "vi": "Kinh tế tầm thấp và các ngành kinh tế mới",
+      "en": "The Low-Altitude Economy and Emerging Industries",
+      "tags": [
+        "Kinh tế tầm thấp",
+        "Ngành kinh tế mới",
+        "Thể chế thử nghiệm"
+      ],
+      "short": "Không gian tầm thấp mở ra những mô hình dịch vụ và hạ tầng mới, từ logistics đến giám sát và đô thị, nhưng cần khung quản lý an toàn và khả năng phối hợp liên ngành.",
+      "long": "Phiên thảo luận khám phá tiềm năng của kinh tế tầm thấp và những ngành mới hình thành quanh phương tiện bay không người lái, dịch vụ trên không, dữ liệu và hạ tầng hỗ trợ. Các ứng dụng có thể xuất hiện trong logistics, nông nghiệp, khảo sát, ứng phó khẩn cấp và quản lý đô thị. Bên cạnh cơ hội thị trường, phiên đặt ra các vấn đề về không phận, an toàn, tiêu chuẩn kỹ thuật, quyền riêng tư, hạ tầng và mô hình cấp phép. Trọng tâm là cách thiết kế môi trường thử nghiệm có kiểm soát, tạo không gian cho doanh nghiệp đổi mới mà vẫn bảo đảm lợi ích công cộng.",
+      "questions": [
+        "Những ứng dụng nào có tiềm năng tạo ra giá trị sớm cho kinh tế tầm thấp?",
+        "Cần hạ tầng và khung quản lý nào để phát triển thị trường an toàn?",
+        "Mô hình thử nghiệm chính sách nên được tổ chức ra sao để thúc đẩy đổi mới có trách nhiệm?"
+      ]
+    },
+    {
+      "id": "AEF27-R3-S6",
+      "date": "27/10/2026",
+      "time": "16:30–17:30",
+      "room": "Phòng 03",
+      "vi": "Vai trò lãnh đạo doanh nghiệp trẻ và tương lai toàn cầu",
+      "en": "Global Future Leaders Summit",
+      "tags": [
+        "Lãnh đạo trẻ",
+        "Doanh nghiệp",
+        "Tương lai toàn cầu"
+      ],
+      "short": "Một thế hệ lãnh đạo mới đang phải đưa ra quyết định trong môi trường nhiều bất định, nơi tăng trưởng, công nghệ và trách nhiệm xã hội ngày càng gắn chặt với nhau.",
+      "long": "Phiên thảo luận tạo không gian cho các lãnh đạo doanh nghiệp trẻ và những người kiến tạo tương lai trao đổi về cách dẫn dắt tổ chức trong một thế giới thay đổi nhanh. Trọng tâm gồm tư duy dài hạn, đổi mới, hợp tác xuyên biên giới, quản trị công nghệ và khả năng cân bằng giữa tăng trưởng với trách nhiệm. Phiên không chỉ bàn về phẩm chất cá nhân, mà còn xem xét vai trò của mạng lưới, cố vấn, hệ sinh thái và cơ hội tham gia vào các chương trình nghị sự lớn. Qua đó, phiên hướng tới kết nối những góc nhìn mới với kinh nghiệm triển khai thực tế.",
+      "questions": [
+        "Năng lực lãnh đạo nào trở nên quan trọng trong bối cảnh bất định và công nghệ thay đổi nhanh?",
+        "Lãnh đạo trẻ có thể tham gia sâu hơn vào các chương trình nghị sự toàn cầu bằng cách nào?",
+        "Làm thế nào để xây dựng mạng lưới hợp tác liên thế hệ và xuyên biên giới?"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "AEF26-CEO500",
+      "date": "26/10/2026",
+      "time": "14:00–16:30",
+      "type": "Đối thoại và kết nối đầu tư",
+      "vi": "CEO 500 – TEA CONNECT",
+      "en": "CEO 500 – TEA CONNECT",
+      "theme": "Góc nhìn mới từ bài toán FDI – Công nghệ – Dòng chảy tài chính toàn cầu",
+      "venue": "Thiskyhall",
+      "short": "Không gian đối thoại và kết nối cấp cao về sự dịch chuyển của đầu tư, công nghệ và tài chính toàn cầu, hướng tới nhận diện cơ hội hợp tác và kết nối nguồn lực cho các ngành kinh tế chiến lược.",
+      "long": "CEO 500 – TEA CONNECT được định hướng là chương trình đối thoại và kết nối đầu tư giữa lãnh đạo khu vực công với lãnh đạo doanh nghiệp, định chế tài chính, quỹ đầu tư và các đối tác trong nước, quốc tế. Nội dung tập trung vào sự dịch chuyển của dòng vốn FDI, công nghệ và tài chính; khả năng thu hút đầu tư chất lượng cao; chuyển giao công nghệ; và kết nối nguồn lực với các ưu tiên phát triển của Việt Nam và Thành phố Hồ Chí Minh. Thông tin về thành phần và cơ chế tham dự sẽ được công bố theo phê duyệt của Ban Tổ chức.",
+      "questions": [
+        "Dòng vốn, công nghệ và tài chính toàn cầu đang dịch chuyển theo những hướng nào?",
+        "Việt Nam và Thành phố Hồ Chí Minh có thể tạo khác biệt trong thu hút đầu tư chất lượng cao ra sao?",
+        "Mô hình hợp tác nào giúp chuyển cơ hội đầu tư thành năng lực phát triển dài hạn?"
+      ]
+    },
+    {
+      "id": "AEF27-RISING",
+      "date": "27/10/2026",
+      "time": "Cả ngày",
+      "type": "Trình diễn công nghệ",
+      "vi": "Khu vực trình diễn giải pháp công nghệ mới và đổi mới sáng tạo",
+      "en": "Rising Star Arena",
+      "theme": "Nơi giải pháp gặp nhu cầu, nơi nghiên cứu gặp thị trường",
+      "venue": "Thiskyhall",
+      "short": "Không gian giới thiệu và trình diễn công nghệ, giải pháp và mô hình đổi mới sáng tạo, kết nối doanh nghiệp, startup, viện trường, nhà đầu tư và cơ quan quản lý.",
+      "long": "Rising Star Arena được định hướng là khu vực trình diễn các công nghệ, giải pháp và mô hình đổi mới sáng tạo đã có cơ sở ứng dụng. Không gian tạo cơ hội để các trung tâm đổi mới, tổ chức khoa học – công nghệ và doanh nghiệp giới thiệu năng lực; đồng thời mở ra kết nối với nhà đầu tư, đối tác triển khai, viện nghiên cứu, trường đại học và cơ quan quản lý. Các phiên trình diễn dự kiến được tổ chức theo định dạng ngắn, tập trung vào bài toán, giải pháp, bằng chứng ứng dụng và khả năng hợp tác tiếp theo.",
+      "questions": []
+    },
+    {
+      "id": "AEF27-RECEPTION",
+      "date": "27/10/2026",
+      "time": "18:00–20:00",
+      "type": "Chiêu đãi chính thức",
+      "vi": "Tiệc chiêu đãi của Lãnh đạo Chính phủ và Thành phố Hồ Chí Minh",
+      "en": "Official Reception Hosted by the Government",
+      "theme": null,
+      "venue": "Địa điểm dự kiến: Dinh Thống Nhất hoặc khách sạn 5 sao tại TP.HCM",
+      "short": "Hoạt động chào mừng đại biểu quốc tế và thúc đẩy giao lưu, kết nối đối ngoại trong khuôn khổ AEF 2026.",
+      "long": "Tiệc chiêu đãi được dự kiến tổ chức nhằm chào mừng các đại biểu quốc tế, tăng cường giao lưu và mở rộng kết nối giữa đại diện khu vực công, các tổ chức quốc tế, doanh nghiệp và đối tác chiến lược. Đây là hoạt động theo thư mời; địa điểm, thành phần và quy trình tham dự cần được xác nhận trong phiên bản chương trình được phê duyệt.",
+      "questions": []
+    },
+    {
+      "id": "AEF27-BIZDINNER",
+      "date": "27/10/2026",
+      "time": "18:00–20:00",
+      "type": "Kết nối doanh nghiệp",
+      "vi": "Tiệc tối kết nối doanh nghiệp",
+      "en": "Business Networking Dinner",
+      "theme": null,
+      "venue": "Địa điểm dự kiến: Thiskyhall",
+      "short": "Không gian kết nối giữa doanh nghiệp, nhà đầu tư, quỹ đầu tư, định chế tài chính và hệ sinh thái đổi mới sáng tạo trong nước, quốc tế.",
+      "long": "Tiệc tối kết nối doanh nghiệp được định hướng là không gian trao đổi giữa cộng đồng doanh nghiệp, nhà đầu tư, định chế tài chính, chuyên gia và các đối tác đổi mới sáng tạo. Hoạt động hướng tới mở rộng mạng lưới, trao đổi cơ hội đầu tư, kết nối cung – cầu công nghệ và khởi tạo các mối quan hệ hợp tác có thể tiếp tục sau Diễn đàn. Cơ chế tham dự dự kiến theo thư mời và sẽ được thông báo sau khi phê duyệt.",
+      "questions": []
+    },
+    {
+      "id": "AEF28-INVEST",
+      "date": "28/10/2026",
+      "time": "07:00–08:00",
+      "type": "Gặp gỡ cấp cao",
+      "vi": "Gặp gỡ nhà đầu tư",
+      "en": "Investment Roundtable",
+      "theme": "Kết nối nguồn lực cho các động lực tăng trưởng mới",
+      "venue": "Thiskyhall — cần đối chiếu với Đề án/Kế hoạch",
+      "short": "Phiên làm việc dự kiến kết nối lãnh đạo khu vực công với các tập đoàn, doanh nghiệp, định chế tài chính và quỹ đầu tư trong nước, quốc tế.",
+      "long": "Gặp gỡ nhà đầu tư được dự kiến tổ chức theo hình thức ăn sáng làm việc, tập trung vào cơ hội đầu tư và hợp tác trong khoa học – công nghệ, đổi mới sáng tạo, chuyển đổi số, chuyển đổi xanh và phát triển bền vững. Hoạt động hướng tới trao đổi trực tiếp về ưu tiên phát triển, điều kiện đầu tư và khả năng huy động nguồn lực quốc tế. Thành phần, chủ trì, địa điểm và nội dung cụ thể phải được xác nhận trước khi công bố.",
+      "questions": [
+        "Những lĩnh vực nào có khả năng tạo ra động lực tăng trưởng và cơ hội hợp tác dài hạn?",
+        "Nhà đầu tư cần điều kiện gì về thể chế, hạ tầng và hệ sinh thái?",
+        "Làm thế nào để nguồn vốn đi cùng công nghệ, nhân lực và giá trị bền vững?"
+      ]
+    },
+    {
+      "id": "AEF28-OPENING",
+      "date": "28/10/2026",
+      "time": "09:00–09:10",
+      "type": "Phát biểu mở đầu",
+      "vi": "Phát biểu của Bí thư Thành ủy Thành phố Hồ Chí Minh",
+      "en": "Remarks by the Secretary of the Ho Chi Minh City Party Committee",
+      "theme": null,
+      "venue": "Thiskyhall",
+      "short": "Phát biểu mở đầu dự kiến đặt bối cảnh cho ngày làm việc cấp cao và vai trò của Thành phố Hồ Chí Minh trong việc kết nối các cực tăng trưởng, nguồn lực và đối tác.",
+      "long": "Đây là phân đoạn mở đầu trong khung chương trình dự thảo. Tên người phát biểu, chức danh, thời lượng và nội dung chỉ được hiển thị công khai sau khi có phê duyệt chính thức.",
+      "questions": []
+    },
+    {
+      "id": "AEF28-PLENARY",
+      "date": "28/10/2026",
+      "time": "09:00–10:30",
+      "type": "Phiên toàn thể cấp cao",
+      "vi": "Sự hội tụ của các cực tăng trưởng toàn cầu",
+      "en": "The Convergence of Global Growth Poles",
+      "theme": "Phiên Toàn thể cấp cao",
+      "venue": "Thiskyhall",
+      "short": "Phiên trọng tâm của AEF 2026 thảo luận về sự dịch chuyển của bản đồ tăng trưởng, vai trò của các cực tăng trưởng mới và nhu cầu hợp tác để kiến tạo động lực phát triển bền vững.",
+      "long": "Phiên Toàn thể cấp cao đặt các chuyển dịch của kinh tế thế giới trong mối liên hệ với những động lực tăng trưởng mới. Nội dung dự kiến bao quát sự tái cấu trúc chuỗi giá trị, vai trò của các nền kinh tế mới nổi và siêu đô thị, công nghệ và đổi mới sáng tạo, chuyển đổi số, chuyển đổi xanh và các mô hình hợp tác đa tầng. Phiên hướng tới kết nối góc nhìn chính sách, kinh doanh và quốc tế; làm rõ cách các cực tăng trưởng có thể bổ trợ nhau, xây dựng lòng tin và chuyển những lợi thế riêng thành giá trị chung.",
+      "questions": [
+        "Bản đồ tăng trưởng toàn cầu đang thay đổi như thế nào?",
+        "Những cực tăng trưởng mới cần điều kiện gì để tạo ra giá trị bền vững?",
+        "Hợp tác giữa chính phủ, đô thị và doanh nghiệp có thể mở ra những động lực nào?"
+      ]
+    },
+    {
+      "id": "AEF28-GLOBAL",
+      "date": "28/10/2026",
+      "time": "10:30–12:00",
+      "type": "Tham luận chuyên sâu",
+      "vi": "Các xu hướng toàn cầu",
+      "en": "In-Depth Panel Discussions: Global Trends",
+      "theme": "Những chuyển dịch định hình thập kỷ tới",
+      "venue": "Thiskyhall",
+      "short": "Phiên tham luận đi sâu vào những xu hướng kinh tế, công nghệ và phát triển đang tác động tới chiến lược của chính phủ, đô thị và doanh nghiệp.",
+      "long": "Tiếp nối Phiên Toàn thể, chương trình tham luận chuyên sâu dự kiến phân tích những xu hướng có khả năng định hình môi trường tăng trưởng trong những năm tới. Các chủ đề có thể bao gồm tái cấu trúc chuỗi cung ứng, cạnh tranh công nghệ, chuyển đổi xanh, biến đổi nhân khẩu học, dòng vốn và những mô hình hợp tác mới. Mục tiêu là giúp người tham dự nhận diện tác động liên ngành, phân biệt tín hiệu ngắn hạn với chuyển dịch cấu trúc và xem xét các lựa chọn chiến lược phù hợp.",
+      "questions": [
+        "Những xu hướng nào có tính cấu trúc và sẽ tác động dài hạn?",
+        "Các chủ thể nên chuẩn bị năng lực gì trước những chuyển dịch này?",
+        "Đâu là không gian hợp tác có thể giảm rủi ro và mở rộng cơ hội?"
+      ]
+    },
+    {
+      "id": "AEF28-MINISTERIAL",
+      "date": "28/10/2026",
+      "time": "14:00–15:45",
+      "type": "Đối thoại chính sách",
+      "vi": "Đối thoại các Bộ trưởng Việt Nam",
+      "en": "Viet Nam Ministerial Dialogue",
+      "theme": "Kiến tạo các động lực tăng trưởng mới cho Việt Nam",
+      "venue": "Thiskyhall",
+      "short": "Phiên đối thoại tập trung vào chính sách, thể chế và cơ chế phối hợp cần thiết để nâng cao năng lực cạnh tranh, khơi thông nguồn lực và tận dụng các cơ hội từ tái cấu trúc kinh tế toàn cầu.",
+      "long": "Đối thoại các Bộ trưởng Việt Nam dự kiến trao đổi về những chính sách và cơ chế phối hợp liên ngành để kiến tạo các động lực tăng trưởng mới. Trọng tâm gồm cải thiện môi trường đầu tư kinh doanh, phát triển khoa học – công nghệ và đổi mới sáng tạo, điều phối nguồn lực trong nước, huy động nguồn lực quốc tế và nâng cao năng lực cạnh tranh. Phiên hướng tới làm rõ mối liên hệ giữa mục tiêu tăng trưởng với chất lượng thể chế, năng lực thực thi và khả năng phối hợp giữa các lĩnh vực.",
+      "questions": [
+        "Những động lực nào có thể tạo ra bước chuyển về chất lượng tăng trưởng?",
+        "Các điểm nghẽn thể chế và phối hợp liên ngành cần được tháo gỡ ra sao?",
+        "Làm thế nào để huy động nguồn lực quốc tế gắn với năng lực trong nước?"
+      ]
+    },
+    {
+      "id": "AEF28-PM",
+      "date": "28/10/2026",
+      "time": "15:45–16:45",
+      "type": "Đối thoại cấp cao",
+      "vi": "Đối thoại cùng Thủ tướng Chính phủ Việt Nam",
+      "en": "Dialogue with the Prime Minister of Viet Nam",
+      "theme": "Định vị Việt Nam trong tương lai toàn cầu",
+      "venue": "Thiskyhall",
+      "short": "Phiên đối thoại dự kiến trao đổi về tầm nhìn phát triển, mô hình tăng trưởng mới và vị thế của Việt Nam trong một môi trường toàn cầu đang thay đổi.",
+      "long": "Phiên đối thoại được dự kiến tổ chức theo hình thức trao đổi trực tiếp, tập trung vào tầm nhìn và định hướng phát triển của Việt Nam trong bối cảnh kinh tế thế giới tái cấu trúc. Nội dung hướng tới các động lực tăng trưởng mới, khoa học – công nghệ, đổi mới sáng tạo, hội nhập, vai trò của khu vực tư nhân và khả năng kết nối Việt Nam với các mạng lưới khu vực, toàn cầu. Việc công bố người chủ trì, đối thoại, thành phần và hình thức truyền hình trực tiếp phải tuân theo phê duyệt chính thức.",
+      "questions": [
+        "Việt Nam định vị mình như thế nào trong bản đồ tăng trưởng mới?",
+        "Mô hình tăng trưởng mới cần dựa trên những năng lực và nguồn lực nào?",
+        "Đâu là thông điệp hợp tác Việt Nam muốn gửi tới cộng đồng quốc tế?"
+      ]
+    },
+    {
+      "id": "AEF28-CLOSING1",
+      "date": "28/10/2026",
+      "time": "16:45–17:15",
+      "type": "Phiên bế mạc",
+      "vi": "Phát biểu đánh giá Diễn đàn của Thủ tướng Chính phủ",
+      "en": "Closing Session and Forward Agenda",
+      "theme": "Từ kết quả đối thoại đến chương trình hành động tiếp theo",
+      "venue": "Thiskyhall",
+      "short": "Phân đoạn dự kiến tổng kết các nội dung chính của Diễn đàn và định hướng chương trình nghị sự tiếp theo.",
+      "long": "Phân đoạn bế mạc dự kiến nhìn lại những chủ đề và kết nối nổi bật của AEF 2026, đồng thời định hướng các bước tiếp theo đối với khuyến nghị, sáng kiến và quan hệ hợp tác khi đủ điều kiện. Tên người phát biểu, nội dung đánh giá và mọi công bố liên quan chỉ được cập nhật sau khi có phê duyệt chính thức.",
+      "questions": []
+    },
+    {
+      "id": "AEF28-CLOSING2",
+      "date": "28/10/2026",
+      "time": "17:15–17:30",
+      "type": "Phát biểu kết thúc",
+      "vi": "Phát biểu của Chủ tịch UBND Thành phố Hồ Chí Minh",
+      "en": "Closing Remarks by the Chairman of the Ho Chi Minh City People's Committee",
+      "theme": null,
+      "venue": "Thiskyhall",
+      "short": "Phát biểu kết thúc dự kiến gửi lời cảm ơn tới các đại biểu, đối tác và định hướng vai trò tiếp nối của Thành phố Hồ Chí Minh sau Diễn đàn.",
+      "long": "Đây là phân đoạn kết thúc theo Khung chương trình dự thảo. Tên người phát biểu, chức danh và nội dung chỉ được công bố sau khi có phê duyệt chính thức.",
+      "questions": []
+    },
+    {
+      "id": "AEF28-GALA",
+      "date": "28/10/2026",
+      "time": "17:30–20:00",
+      "type": "Giao lưu và kết nối",
+      "vi": "Tiệc giao lưu và kết nối",
+      "en": "Gala Dinner",
+      "theme": null,
+      "venue": "Thiskyhall",
+      "short": "Hoạt động giao lưu cuối chương trình, tạo không gian kết nối giữa các đại biểu trong nước và quốc tế tham dự AEF 2026.",
+      "long": "Tiệc giao lưu và kết nối được dự kiến tổ chức sau khi kết thúc các phiên chính, tạo không gian để đại biểu tiếp tục trao đổi và mở rộng quan hệ. Đây là hoạt động theo điều kiện tham dự của Ban Tổ chức; chương trình, thành phần và quyền tiếp cận sẽ được thông báo sau khi phê duyệt.",
+      "questions": []
+    },
+    {
+      "id": "AEF25-30-SIDE",
+      "date": "25–30/10/2026",
+      "time": "Theo lịch từng hoạt động",
+      "type": "Hoạt động bên lề",
+      "vi": "Chuỗi hoạt động bên lề AEF 2026",
+      "en": "AEF 2026 Side Events",
+      "theme": "Kết nối đối thoại, công nghệ, đầu tư và trải nghiệm Thành phố",
+      "venue": "Nhiều địa điểm — đang cập nhật",
+      "short": "Chuỗi hoạt động dự kiến gồm hội thảo song phương, Collaboration Roads, triển lãm, trình diễn công nghệ, kết nối đầu tư, giao lưu văn hóa và các chương trình khảo sát thực địa.",
+      "long": "Các hoạt động bên lề được định hướng để mở rộng AEF 2026 ra ngoài các phiên hội nghị chính. Nội dung dự kiến bao gồm hội thảo song phương, không gian hợp tác Collaboration Roads, triển lãm và trình diễn công nghệ, kết nối đầu tư, hoạt động nghệ thuật – công nghệ, họp mạng lưới C4IR, tham quan các khu công nghệ, trung tâm đổi mới, doanh nghiệp tiêu biểu và trải nghiệm văn hóa – du lịch. Mỗi hoạt động chỉ được tạo trang công khai sau khi có đơn vị phụ trách, concept, thời gian, địa điểm và phê duyệt truyền thông.",
+      "questions": []
+    }
+  ]
+}
