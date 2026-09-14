@@ -555,36 +555,44 @@ function aef_home_block_programme() {
     <?php
 	$days = array(
 		array(
-			'd'    => '26',
-			'hl'   => false,
-			'lab'  => array( 'en' => 'Monday · Pre-Forum', 'vi' => 'Thứ Hai · Tiền diễn đàn' ),
-			'tag'  => '',
-			'rows' => array( 'dual-transition-conference', 'vietnam-india-future-tech', 'oid-2026', 'ceo-500-tea-connect' ),
+			'd'        => '26',
+			'day_slug' => 'pre',
+			'hl'       => false,
+			'lab'      => array( 'en' => 'Monday · Pre-Forum', 'vi' => 'Thứ Hai · Tiền diễn đàn' ),
+			'tag'      => '',
 		),
 		array(
-			'd'    => '27',
-			'hl'   => true,
-			'lab'  => array( 'en' => 'Tuesday · Main Forum — Day 1', 'vi' => 'Thứ Ba · Diễn đàn chính — Ngày 1' ),
-			'tag'  => array( 'en' => 'Thematic & networking', 'vi' => 'Chuyên đề & kết nối' ),
-			'rows' => array( '27-oct-opening', '_thematic', '_arena', 'official-reception', 'business-networking-dinner' ),
+			'd'                    => '27',
+			'day_slug'             => 'thematic',
+			'hl'                   => true,
+			'lab'                  => array( 'en' => 'Tuesday · Main Forum — Day 1', 'vi' => 'Thứ Ba · Diễn đàn chính — Ngày 1' ),
+			'tag'                  => array( 'en' => 'Thematic & networking', 'vi' => 'Chuyên đề & kết nối' ),
+			// 2 thẻ tổng hợp (không phải phiên thật) chèn ngay sau phiên khai mạc.
+			// Nếu không tìm thấy phiên neo (đổi slug, ẩn khỏi trang chủ...), code bên
+			// dưới vẫn đảm bảo 2 thẻ này luôn hiện ra (ở cuối danh sách của ngày 27),
+			// để không bao giờ vô tình biến mất khỏi trang chủ.
+			'synthetic_after_slug' => '27-oct-opening',
 		),
 		array(
-			'd'    => '28',
-			'hl'   => true,
-			'lab'  => array( 'en' => 'Wednesday · Main Forum — Day 2', 'vi' => 'Thứ Tư · Diễn đàn chính — Ngày 2' ),
-			'tag'  => array( 'en' => 'High-level dialogue', 'vi' => 'Đối thoại cấp cao' ),
-			'rows' => array( 'high-level-plenary', 'pm-dialogue', 'ministerial-dialogue', 'gala-dinner' ),
+			'd'        => '28',
+			'day_slug' => 'high-level',
+			'hl'       => true,
+			'lab'      => array( 'en' => 'Wednesday · Main Forum — Day 2', 'vi' => 'Thứ Tư · Diễn đàn chính — Ngày 2' ),
+			'tag'      => array( 'en' => 'High-level dialogue', 'vi' => 'Đối thoại cấp cao' ),
 		),
 		array(
-			'd'    => '29',
-			'hl'   => false,
-			'lab'  => array( 'en' => 'Thursday · Post-Forum', 'vi' => 'Thứ Năm · Hậu diễn đàn' ),
-			'tag'  => '',
-			'rows' => array( 'vietnam-israel-innovation-day', 'vietnam-china-investment', 'nordic-investment', 'field-visits', 'c4ir-network-meeting' ),
+			'd'        => '29',
+			'day_slug' => 'side',
+			'hl'       => false,
+			'lab'      => array( 'en' => 'Thursday · Post-Forum', 'vi' => 'Thứ Năm · Hậu diễn đàn' ),
+			'tag'      => '',
 		),
 	);
-	$key_slugs  = array( 'ceo-500-tea-connect', 'high-level-plenary', 'pm-dialogue', 'official-reception', 'c4ir-network-meeting' );
-	$live_slugs = array( 'high-level-plenary', 'pm-dialogue' );
+
+	$render_thematic_arena_cards = function () {
+		aef_home_tl_card( home_url( '/programme/?view=thematic' ), '08:30–18:00', aef_t( array( 'en' => '3 rooms', 'vi' => '3 phòng' ) ), aef_t( array( 'en' => '15 parallel thematic sessions', 'vi' => '15 phiên thảo luận chuyên đề song song' ) ), aef_t( array( 'en' => 'Three thematic rooms; each session features 3–4 speakers and one moderator.', 'vi' => 'Ba phòng chuyên đề, mỗi phiên 3–4 diễn giả và 1 điều phối viên.' ) ), true );
+		aef_home_tl_card( home_url( '/programme/?view=arena' ), '08:30–17:30', '45′', aef_t( array( 'en' => 'Rising Star Arena — technology showcase', 'vi' => 'Rising Star Arena — trình diễn giải pháp công nghệ' ) ), aef_t( array( 'en' => 'Technology showcase at Thiskyhall, 45 minutes per slot. Presenting organisations: to be confirmed.', 'vi' => 'Trình diễn công nghệ tại Thiskyhall, mỗi lượt 45 phút. Đơn vị trình diễn: Đang xác nhận.' ) ) );
+	};
 	?>
     <div class="tl">
       <?php foreach ( $days as $day ) : ?>
@@ -597,15 +605,22 @@ function aef_home_block_programme() {
         </header>
         <?php if ( ! empty( $day['hl'] ) ) : ?><div class="pg-mainpanel"><span class="pg-mainlabel"><?php echo esc_html( aef_t( array( 'en' => 'Main Forum', 'vi' => 'Diễn đàn chính' ) ) ); ?></span><?php endif; ?>
         <div class="tl-items">
-          <?php foreach ( $day['rows'] as $row ) : ?>
-            <?php if ( '_thematic' === $row ) : ?>
-              <?php aef_home_tl_card( home_url( '/programme/?view=thematic' ), '08:30–18:00', aef_t( array( 'en' => '3 rooms', 'vi' => '3 phòng' ) ), aef_t( array( 'en' => '15 parallel thematic sessions', 'vi' => '15 phiên thảo luận chuyên đề song song' ) ), aef_t( array( 'en' => 'Three thematic rooms; each session features 3–4 speakers and one moderator.', 'vi' => 'Ba phòng chuyên đề, mỗi phiên 3–4 diễn giả và 1 điều phối viên.' ) ), true ); ?>
-            <?php elseif ( '_arena' === $row ) : ?>
-              <?php aef_home_tl_card( home_url( '/programme/?view=arena' ), '08:30–17:30', '45′', aef_t( array( 'en' => 'Rising Star Arena — technology showcase', 'vi' => 'Rising Star Arena — trình diễn giải pháp công nghệ' ) ), aef_t( array( 'en' => 'Technology showcase at Thiskyhall, 45 minutes per slot. Presenting organisations: to be confirmed.', 'vi' => 'Trình diễn công nghệ tại Thiskyhall, mỗi lượt 45 phút. Đơn vị trình diễn: Đang xác nhận.' ) ) ); ?>
-            <?php else : ?>
-              <?php aef_home_tl_session( $row, in_array( $row, $key_slugs, true ), in_array( $row, $live_slugs, true ) ); ?>
-            <?php endif; ?>
-          <?php endforeach; ?>
+          <?php
+			$posts          = aef_home_schedule_items( $day['day_slug'] );
+			$synthetic_done = ! isset( $day['synthetic_after_slug'] );
+			foreach ( $posts as $p ) :
+				$is_key  = '1' === (string) get_post_meta( $p->ID, 'is_key', true );
+				$is_live = '1' === (string) get_post_meta( $p->ID, 'is_live', true );
+				aef_home_tl_session( $p->post_name, $is_key, $is_live );
+				if ( ! $synthetic_done && $day['synthetic_after_slug'] === $p->post_name ) {
+					$render_thematic_arena_cards();
+					$synthetic_done = true;
+				}
+			endforeach;
+			if ( ! $synthetic_done ) {
+				$render_thematic_arena_cards();
+			}
+			?>
         </div>
         <?php if ( ! empty( $day['hl'] ) ) : ?></div><?php endif; ?>
       </div>
