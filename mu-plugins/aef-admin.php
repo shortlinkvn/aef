@@ -168,7 +168,17 @@ function aef_session_box( $post ) {
 	aef_field( $post->ID, 'audience_en', 'Participants (EN)', 'textarea' );
 	aef_field( $post->ID, 'date_label', 'Date label (27/10/2026)' );
 	aef_field( $post->ID, 'time', 'Time' );
-	aef_field( $post->ID, 'room', 'Room' );
+
+	$room    = get_post_meta( $post->ID, 'room', true );
+	$choices = aef_room_choices();
+	if ( $room && ! isset( $choices[ $room ] ) ) {
+		$choices[ $room ] = $room . ' (giá trị cũ, chưa có trong danh sách chuẩn)';
+	}
+	echo '<p><label><strong>Room</strong><br><select name="room" class="widefat">';
+	foreach ( $choices as $key => $label ) {
+		echo '<option value="' . esc_attr( $key ) . '"' . selected( $room, $key, false ) . '>' . esc_html( $label ) . '</option>';
+	}
+	echo '</select></label></p>';
 	aef_field( $post->ID, 'access_en', 'Access (EN)' );
 	aef_field( $post->ID, 'access_vi', 'Quyền tiếp cận (VI)' );
 	aef_field( $post->ID, 'status', 'Status (up|live|rep|arc)' );
@@ -179,6 +189,17 @@ function aef_session_box( $post ) {
 	aef_field( $post->ID, 'long_vi', 'Bối cảnh (VI)', 'textarea' );
 	aef_field( $post->ID, 'questions_en', 'Guiding questions EN (one per line)', 'textarea' );
 	aef_field( $post->ID, 'questions_vi', 'Câu hỏi dẫn dắt VI (mỗi dòng một câu)', 'textarea' );
+
+	echo '<hr>';
+	$show_home = get_post_meta( $post->ID, 'show_on_home', true );
+	echo '<p><label><input type="hidden" name="show_on_home" value="0"><input type="checkbox" name="show_on_home" value="1"' . checked( $show_home, '1', false ) . '> Hiện ở trang chủ (khối lịch trình)</label></p>';
+	$is_key = get_post_meta( $post->ID, 'is_key', true );
+	echo '<p><label><input type="hidden" name="is_key" value="0"><input type="checkbox" name="is_key" value="1"' . checked( $is_key, '1', false ) . '> Phiên nổi bật (đậm) ở trang chủ</label></p>';
+	$is_live = get_post_meta( $post->ID, 'is_live', true );
+	echo '<p><label><input type="hidden" name="is_live" value="0"><input type="checkbox" name="is_live" value="1"' . checked( $is_live, '1', false ) . '> Gắn nhãn "Truyền hình trực tiếp"</label></p>';
+	echo '<p><label><strong>Thứ tự trong ngày</strong> (số nhỏ hiện trước)<br><input type="number" class="small-text" name="aef_menu_order" value="' . esc_attr( (string) $post->menu_order ) . '"></label></p>';
+	echo '<p class="description">Sắp xếp kéo-thả hàng loạt: <a href="' . esc_url( admin_url( 'admin.php?page=aef-schedule-order' ) ) . '">Sắp xếp chương trình</a>.</p>';
+
 	aef_session_people_editor( $post->ID );
 }
 
@@ -328,10 +349,27 @@ function aef_save_metaboxes( $post_id ) {
 		}
 	}
 	if ( isset( $_POST['aef_ses_nonce'] ) && wp_verify_nonce( $_POST['aef_ses_nonce'], 'aef_ses' ) ) {
-		$text = array( 'session_id', 'kind', 'date_label', 'time', 'room', 'format_en', 'format_vi', 'lead_en', 'lead_vi', 'access_en', 'access_vi', 'status', 'tags' );
+		$text = array( 'session_id', 'kind', 'date_label', 'time', 'format_en', 'format_vi', 'lead_en', 'lead_vi', 'access_en', 'access_vi', 'status', 'tags' );
 		foreach ( $text as $key ) {
 			if ( isset( $_POST[ $key ] ) ) {
 				update_post_meta( $post_id, $key, sanitize_text_field( wp_unslash( $_POST[ $key ] ) ) );
+			}
+		}
+		// Room: lưu nguyên giá trị đã chọn/đang có — không ép về rỗng nếu là giá trị cũ
+		// chưa nằm trong aef_room_choices(), vì khung chọn ở aef_session_box() luôn tự
+		// thêm giá trị hiện tại vào danh sách nên mọi giá trị gửi lên đều hợp lệ.
+		if ( isset( $_POST['room'] ) ) {
+			update_post_meta( $post_id, 'room', sanitize_text_field( wp_unslash( $_POST['room'] ) ) );
+		}
+		update_post_meta( $post_id, 'show_on_home', ( isset( $_POST['show_on_home'] ) && '1' === (string) $_POST['show_on_home'] ) ? '1' : '0' );
+		update_post_meta( $post_id, 'is_key', ( isset( $_POST['is_key'] ) && '1' === (string) $_POST['is_key'] ) ? '1' : '0' );
+		update_post_meta( $post_id, 'is_live', ( isset( $_POST['is_live'] ) && '1' === (string) $_POST['is_live'] ) ? '1' : '0' );
+		if ( isset( $_POST['aef_menu_order'] ) ) {
+			$order = absint( $_POST['aef_menu_order'] );
+			if ( (int) get_post_field( 'menu_order', $post_id ) !== $order ) {
+				remove_action( 'save_post', 'aef_save_metaboxes' );
+				wp_update_post( array( 'ID' => $post_id, 'menu_order' => $order ) );
+				add_action( 'save_post', 'aef_save_metaboxes' );
 			}
 		}
 		$areas = array( 'short_en', 'short_vi', 'long_en', 'long_vi', 'questions_en', 'questions_vi', 'audience_en', 'audience_vi' );
@@ -377,6 +415,7 @@ function aef_editor_menu() {
 	add_submenu_page( 'aef-content', 'Trang trong', 'Trang trong', 'edit_pages', 'aef-inner', 'aef_inner_page' );
 	add_submenu_page( 'aef-content', 'Khung trang', 'Khung trang', 'edit_pages', 'aef-chrome', 'aef_chrome_page' );
 	add_submenu_page( 'aef-content', 'Cài đặt kỳ', 'Cài đặt kỳ', 'manage_options', 'aef-edition', 'aef_settings_page' );
+	add_submenu_page( 'aef-content', 'Sắp xếp chương trình', 'Sắp xếp chương trình', 'edit_pages', 'aef-schedule-order', 'aef_schedule_order_page' );
 	add_submenu_page( 'aef-content', 'Menu EN/VI', 'Menu EN/VI', 'edit_theme_options', 'nav-menus.php' );
 	add_submenu_page( 'aef-content', 'Tin / thông cáo', 'Tin / thông cáo', 'edit_posts', 'edit.php?post_type=aef_story' );
 	add_submenu_page( 'aef-content', 'Đối tác', 'Đối tác', 'edit_posts', 'edit.php?post_type=aef_partner' );
@@ -938,6 +977,128 @@ function aef_partner_logos_assets() {
 			rebuildPreview();
 		});
 		rebuildPreview();
+	});
+	</script>
+	<?php
+}
+
+function aef_schedule_order_page() {
+	if ( ! current_user_can( 'edit_pages' ) ) {
+		return;
+	}
+
+	if ( isset( $_POST['aef_save_schedule_order'] ) && check_admin_referer( 'aef_schedule_order' ) ) {
+		$groups = isset( $_POST['order'] ) ? (array) wp_unslash( $_POST['order'] ) : array();
+		$saved  = 0;
+		foreach ( $groups as $ids ) {
+			$i = 0;
+			foreach ( (array) $ids as $raw_id ) {
+				$id = absint( $raw_id );
+				if ( ! $id || 'aef_session' !== get_post_type( $id ) || ! current_user_can( 'edit_post', $id ) ) {
+					continue;
+				}
+				if ( (int) get_post_field( 'menu_order', $id ) !== $i ) {
+					wp_update_post( array( 'ID' => $id, 'menu_order' => $i ) );
+				}
+				$i++;
+				$saved++;
+			}
+		}
+		echo '<div class="updated notice"><p>Đã lưu thứ tự cho ' . intval( $saved ) . ' phiên.</p></div>';
+	}
+
+	$days = get_terms( array( 'taxonomy' => 'aef_day', 'hide_empty' => false, 'orderby' => 'term_id' ) );
+	if ( is_wp_error( $days ) ) {
+		$days = array();
+	}
+	$rooms = aef_room_choices();
+
+	echo '<div class="wrap aef-desk"><h1>Sắp xếp chương trình</h1>';
+	echo '<p>Kéo (hoặc dùng nút ↑ ↓) để đổi thứ tự phiên trong từng ngày — thứ tự này quyết định phiên nào hiện trước trên trang chủ và trang /programme/. Muốn đổi ngày, phòng, hay bật/tắt hiện ở trang chủ, vào sửa từng phiên (bấm "Sửa").</p>';
+	echo '<form method="post">';
+	wp_nonce_field( 'aef_schedule_order' );
+
+	if ( ! $days ) {
+		echo '<p class="description">Chưa có "Lớp chương trình" (taxonomy aef_day) nào.</p>';
+	}
+
+	foreach ( $days as $day ) {
+		$q = new WP_Query(
+			array(
+				'post_type'      => 'aef_session',
+				'posts_per_page' => 100,
+				'post_status'    => array( 'publish', 'draft', 'pending', 'private' ),
+				'orderby'        => 'menu_order',
+				'order'          => 'ASC',
+				'tax_query'      => array(
+					array(
+						'taxonomy' => 'aef_day',
+						'field'    => 'slug',
+						'terms'    => $day->slug,
+					),
+				),
+			)
+		);
+		echo '<h2>' . esc_html( $day->name ) . '</h2>';
+		if ( ! $q->have_posts() ) {
+			echo '<p class="description">Chưa có phiên nào trong ngày này.</p>';
+			continue;
+		}
+		echo '<ol class="aef-stack aef-sched-stack" data-day="' . esc_attr( $day->slug ) . '">';
+		while ( $q->have_posts() ) {
+			$q->the_post();
+			$id       = get_the_ID();
+			$room_key = get_post_meta( $id, 'room', true );
+			$room_lbl = isset( $rooms[ $room_key ] ) ? $rooms[ $room_key ] : ( $room_key ? $room_key : '— chưa gán phòng —' );
+			$time     = get_post_meta( $id, 'time', true );
+			$home_on  = '1' === (string) get_post_meta( $id, 'show_on_home', true );
+			echo '<li class="aef-card" data-id="' . esc_attr( (string) $id ) . '">';
+			echo '<input type="hidden" name="order[' . esc_attr( $day->slug ) . '][]" value="' . esc_attr( (string) $id ) . '">';
+			echo '<span class="aef-handle" title="Kéo để đổi thứ tự">⋮⋮</span> ';
+			echo '<strong>' . esc_html( get_the_title() ) . '</strong> ';
+			echo '<span class="aef-badge">' . esc_html( $room_lbl ) . '</span>';
+			if ( $time ) {
+				echo ' <span class="aef-badge">' . esc_html( $time ) . '</span>';
+			}
+			if ( $home_on ) {
+				echo ' <span class="aef-badge" style="background:#d5f0d8;color:#1e4620">Trang chủ</span>';
+			}
+			echo ' <span class="aef-move"><button type="button" class="button aef-up">↑</button> <button type="button" class="button aef-down">↓</button></span>';
+			echo ' <a class="button-link" href="' . esc_url( get_edit_post_link( $id, 'raw' ) ) . '">Sửa</a>';
+			echo '</li>';
+		}
+		echo '</ol>';
+		wp_reset_postdata();
+	}
+
+	submit_button( 'Lưu thứ tự', 'primary', 'aef_save_schedule_order' );
+	echo '</form></div>';
+	aef_schedule_order_assets();
+}
+
+function aef_schedule_order_assets() {
+	?>
+	<style>
+		.aef-sched-stack{list-style:none;margin:0 0 24px;padding:0;max-width:900px}
+		.aef-sched-stack .aef-card{background:#fff;border:1px solid #c3c4c7;border-radius:4px;margin:0 0 6px;padding:8px 10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+		.aef-sched-stack .aef-handle{cursor:grab;color:#787c82;letter-spacing:-2px;user-select:none}
+		.aef-sched-stack .aef-badge{font-size:11px;padding:2px 8px;border-radius:10px;background:#f0f0f1;color:#50575e}
+		.aef-sched-stack .aef-move{margin-left:auto}
+		.aef-sched-stack .ui-sortable-helper{box-shadow:0 8px 24px rgba(0,0,0,.12)}
+	</style>
+	<script>
+	jQuery(function ($) {
+		$('.aef-sched-stack').each(function () {
+			if ($.fn.sortable) {
+				$(this).sortable({ handle: '.aef-handle', axis: 'y', placeholder: 'aef-card' });
+			}
+		});
+		function swap($item, dir) {
+			if (dir < 0) { $item.prev('li').before($item); }
+			else { $item.next('li').after($item); }
+		}
+		$(document).on('click', '.aef-up', function () { swap($(this).closest('li'), -1); });
+		$(document).on('click', '.aef-down', function () { swap($(this).closest('li'), 1); });
 	});
 	</script>
 	<?php

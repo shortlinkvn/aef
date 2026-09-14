@@ -85,6 +85,7 @@ function aef_c4ir_mark( $on_dark = false ) {
 	return $url . '?v=' . rawurlencode( $ver );
 }
 
+require_once get_template_directory() . '/inc/schedule.php';
 require_once get_template_directory() . '/inc/reference.php';
 require_once get_template_directory() . '/inc/travel.php';
 require_once get_template_directory() . '/inc/editions.php';

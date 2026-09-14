@@ -19,7 +19,7 @@ function aef_register_types() {
 		'public'       => true,
 		'show_in_rest' => true,
 		'menu_icon'    => 'dashicons-schedule',
-		'supports'     => array( 'title', 'editor', 'excerpt', 'custom-fields' ),
+		'supports'     => array( 'title', 'editor', 'excerpt', 'custom-fields', 'page-attributes' ),
 		'rewrite'      => array( 'slug' => 'sessions' ),
 		'has_archive'  => 'programme',
 	) );
@@ -1696,6 +1696,23 @@ function aef_partner_tiers() {
 		'accompanying' => array( 'en' => 'Accompanying', 'vi' => 'Đồng hành' ),
 		'media'        => array( 'en' => 'Media partner', 'vi' => 'Đối tác truyền thông' ),
 		'other'        => array( 'en' => 'Other', 'vi' => 'Khác' ),
+	);
+}
+
+/**
+ * Danh sách phòng cố định cho 3 phòng chuyên đề song song (dữ liệu thật đang lưu
+ * đúng chuỗi "Room 01/02/03" trong meta 'room'). Các phiên khác (Rising Star Arena,
+ * phiên toàn thể, sự kiện bên lề...) có thể vẫn giữ giá trị tự do — khung chọn ở
+ * màn hình sửa phiên sẽ tự thêm giá trị đang có nếu không khớp danh sách này, để
+ * không làm mất dữ liệu cũ.
+ */
+function aef_room_choices() {
+	return array(
+		''                  => '— Chưa gán phòng —',
+		'Room 01'           => 'Phòng 01',
+		'Room 02'           => 'Phòng 02',
+		'Room 03'           => 'Phòng 03',
+		'Rising Star Arena' => 'Rising Star Arena',
 	);
 }
 
