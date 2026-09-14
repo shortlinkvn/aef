@@ -1926,6 +1926,36 @@ function aef_admin_card_open( $title, $help = '' ) {
 	}
 }
 
+/**
+ * Đổi chuỗi lưu trữ (VD "2026-10-27T00:00:00+07:00") sang định dạng
+ * <input type="datetime-local"> hiểu được ("2026-10-27T00:00"). Luôn coi giờ
+ * lưu trữ là giờ Việt Nam (GMT+7) — bỏ phần giây và múi giờ khi hiển thị,
+ * vì input datetime-local không có khái niệm múi giờ.
+ */
+function aef_coming_target_to_local( $stored ) {
+	if ( ! is_string( $stored ) || '' === $stored ) {
+		return '';
+	}
+	if ( preg_match( '/^(\d{4}-\d{2}-\d{2}T\d{2}:\d{2})/', $stored, $m ) ) {
+		return $m[1];
+	}
+	return '';
+}
+
+/**
+ * Chiều ngược lại: nhận giá trị thô từ <input type="datetime-local"> (định dạng
+ * "2026-10-27T00:00", luôn hiểu là giờ Việt Nam GMT+7) và dựng lại đúng chuỗi
+ * ISO 8601 kèm múi giờ để lưu — đảm bảo countdown luôn nhận được giá trị hợp lệ,
+ * không phụ thuộc vào việc gõ tay đúng định dạng như trước.
+ */
+function aef_coming_target_from_local( $raw, $fallback ) {
+	$raw = is_string( $raw ) ? trim( $raw ) : '';
+	if ( preg_match( '/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/', $raw ) ) {
+		return $raw . ':00+07:00';
+	}
+	return $fallback;
+}
+
 function aef_coming_page() {
 	if ( ! current_user_can( 'edit_pages' ) ) {
 		return;
@@ -1936,7 +1966,9 @@ function aef_coming_page() {
 		$ids      = aef_coming_id_keys();
 		$out      = array();
 		foreach ( $defaults as $key => $fallback ) {
-			if ( in_array( $key, $flags, true ) ) {
+			if ( 'coming_target' === $key ) {
+				$out[ $key ] = aef_coming_target_from_local( isset( $_POST['coming_target_dt'] ) ? wp_unslash( $_POST['coming_target_dt'] ) : '', $fallback );
+			} elseif ( in_array( $key, $flags, true ) ) {
 				$out[ $key ] = empty( $_POST[ $key ] ) ? '0' : '1';
 			} elseif ( in_array( $key, $ids, true ) ) {
 				$out[ $key ] = isset( $_POST[ $key ] ) ? (string) absint( $_POST[ $key ] ) : '0';
@@ -1958,7 +1990,7 @@ function aef_coming_page() {
 
 	aef_admin_card_open( '1. Công tắc trang', 'Bật khi aef.vn chỉ hiện coming soon với khách chưa đăng nhập.' );
 	aef_admin_on( $c, 'coming_on', 'Bật Coming soon cho khách chưa đăng nhập' );
-	echo '<p><label>Mốc đếm ngược (ISO 8601, giờ Việt Nam)<br><input type="text" class="regular-text" name="coming_target" value="' . esc_attr( $c['coming_target'] ) . '"></label></p>';
+	echo '<p><label>Mốc đếm ngược (giờ Việt Nam, GMT+7)<br><input type="datetime-local" name="coming_target_dt" value="' . esc_attr( aef_coming_target_to_local( $c['coming_target'] ) ) . '"></label></p>';
 	echo '<p class="description">Ví dụ 2026-10-27T00:00:00+07:00 — ngày diễn đàn chính.</p>';
 	echo '</div>';
 

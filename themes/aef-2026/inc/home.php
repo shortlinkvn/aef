@@ -106,36 +106,7 @@ function aef_home_block_hero() {
       <div><b data-u="m">—</b><span><?php echo esc_html( aef_t( array( 'en' => 'Minutes', 'vi' => 'Phút' ) ) ); ?></span></div>
       <div><b data-u="s">—</b><span><?php echo esc_html( aef_t( array( 'en' => 'Seconds', 'vi' => 'Giây' ) ) ); ?></span></div>
     </div>
-    <script>
-    (function(){
-      var box=document.querySelector("[data-cx-count]");
-      if(!box) return;
-      var raw=(box.getAttribute("data-target")||"").replace(/\s/g,"");
-      var end=Date.parse(raw);
-      if(isNaN(end)){
-        var p=raw.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})([+-]\d{2}):?(\d{2})$/);
-        if(p){
-          end=Date.UTC(+p[1],+p[2]-1,+p[3],+p[4]-(+p[7]),+p[5]-(p[7].indexOf("-")===0?-+p[8]:+p[8]),+p[6]);
-        }
-      }
-      if(!end||isNaN(end)) return;
-      function pad(n){return n<10?"0"+n:String(n);}
-      function tick(){
-        var left=Math.max(0,end-Date.now()), s=Math.floor(left/1000);
-        var d=Math.floor(s/86400); s-=d*86400;
-        var h=Math.floor(s/3600); s-=h*3600;
-        var m=Math.floor(s/60); s-=m*60;
-        var map={d:String(d),h:pad(h),m:pad(m),s:pad(s)};
-        var els=box.querySelectorAll("[data-u]");
-        for(var i=0;i<els.length;i++){
-          var k=els[i].getAttribute("data-u");
-          if(k&&map[k]!=null) els[i].textContent=map[k];
-        }
-      }
-      tick();
-      setInterval(tick,1000);
-    })();
-    </script>
+    <?php // Bộ đếm ngược chạy bằng assets/front.js (hàm aefBindCount), không cần script riêng ở đây nữa — trước đây có 2 bản logic giống hệt nhau chạy song song. ?>
     </div>
     </div>
   </div>

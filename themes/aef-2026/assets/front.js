@@ -1,15 +1,21 @@
 (function () {
+  // Mốc mặc định nếu ô "Mốc đếm ngược" ở AEF Content → Cài đặt kỳ bị để trống
+  // hoặc gõ sai định dạng — để countdown không bao giờ đứng im ở dấu "—".
+  var AEF_COUNT_FALLBACK = '2026-10-27T00:00:00+07:00';
   function aefParseTarget(raw) {
-    if (!raw) return 0;
+    if (!raw) return Date.parse(AEF_COUNT_FALLBACK);
     raw = String(raw).replace(/\s/g, '');
     var t = Date.parse(raw);
     if (!isNaN(t)) return t;
     var p = raw.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})([+-]\d{2}):?(\d{2})$/);
-    if (!p) return 0;
-    var sign = p[7].charAt(0) === '-' ? -1 : 1;
-    var oh = parseInt(p[7], 10);
-    var om = sign * parseInt(p[8], 10);
-    return Date.UTC(+p[1], +p[2] - 1, +p[3], +p[4] - oh, +p[5] - om, +p[6]);
+    if (p) {
+      var sign = p[7].charAt(0) === '-' ? -1 : 1;
+      var oh = parseInt(p[7], 10);
+      var om = sign * parseInt(p[8], 10);
+      var parsed = Date.UTC(+p[1], +p[2] - 1, +p[3], +p[4] - oh, +p[5] - om, +p[6]);
+      if (!isNaN(parsed)) return parsed;
+    }
+    return Date.parse(AEF_COUNT_FALLBACK);
   }
   function aefBindCount(root) {
     if (!root) return;
