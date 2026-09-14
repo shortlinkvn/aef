@@ -32,8 +32,41 @@ function aef_field( $post_id, $key, $label, $type = 'text' ) {
 	echo '</label></p>';
 }
 
+/**
+ * Với post_type 'page', ô soạn thảo Anh/Việt bên dưới KHÔNG hiển thị trên mọi
+ * trang — 5 trang có bố cục thiết kế riêng (page.php route bằng slug, bỏ qua
+ * hoàn toàn nội dung soạn thảo), 3 trang khác lấy nội dung chính từ 1 màn quản
+ * trị riêng (ô soạn thảo chỉ là dự phòng khi màn đó bỏ trống). Việc này khiến
+ * BTC dễ gõ nhầm vào ô chết mà không biết. Hàm này in ra 1 ghi chú rõ ràng,
+ * đúng ngay tại chỗ dễ nhầm, thay vì chỉ nằm trong tài liệu riêng.
+ * Xem thêm: docs/huong-dan-noi-dung.md
+ */
+function aef_page_editor_notice( $post ) {
+	if ( 'page' !== $post->post_type ) {
+		return;
+	}
+	$slug = $post->post_name;
+
+	$code_only = array( 'travel', 'venue', 'hotels', 'transport', 'how-to-register', 'delegates', 'support', 'media-support' );
+	if ( in_array( $slug, $code_only, true ) ) {
+		echo '<div class="notice notice-warning inline" style="margin:0 0 14px"><p><strong>Lưu ý:</strong> trang này dùng bố cục thiết kế riêng (không phải bài viết thường). Nội dung gõ ở khung Anh/Việt bên dưới <strong>sẽ không hiện ra</strong> trên trang thật. Muốn đổi nội dung trang này, cần nhờ lập trình viên sửa code — xem <code>docs/huong-dan-noi-dung.md</code> trong mã nguồn theme.</p></div>';
+		return;
+	}
+
+	$field_screens = array(
+		'about'    => array( admin_url( 'admin.php?page=aef-about' ), 'Giới thiệu' ),
+		'topics'   => array( admin_url( 'admin.php?page=aef-topics' ), 'Chuyên đề' ),
+		'partners' => array( admin_url( 'admin.php?page=aef-inner' ), 'Trang trong' ),
+	);
+	if ( isset( $field_screens[ $slug ] ) ) {
+		list( $url, $label ) = $field_screens[ $slug ];
+		echo '<div class="notice notice-info inline" style="margin:0 0 14px"><p><strong>Lưu ý:</strong> nội dung chính của trang này sửa tại màn hình <a href="' . esc_url( $url ) . '">' . esc_html( $label ) . '</a>. Khung Anh/Việt bên dưới chỉ được dùng khi ô tương ứng ở màn đó để trống.</p></div>';
+	}
+}
+
 function aef_i18n_box( $post ) {
 	wp_nonce_field( 'aef_i18n', 'aef_i18n_nonce' );
+	aef_page_editor_notice( $post );
 	echo '<p>Công chúng đổi ngôn ngữ bằng EN / VI trên header. Ô WordPress phía trên chỉ là dự phòng khi một phía còn trống.</p>';
 	echo '<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">';
 	echo '<div><h3>English</h3>';
