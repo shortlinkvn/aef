@@ -810,6 +810,14 @@ a.pillar:hover h3{color:var(--blue)}
 .speaker-who h1{font-size:clamp(26px,3vw,40px);text-transform:none;letter-spacing:-.03em;margin:0 0 10px;line-height:1.15;max-width:22ch}
 .speaker-credit{margin:0;font-size:16px;line-height:1.45;color:var(--soft);max-width:48ch}
 .speaker-country{margin:10px 0 0;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--deep)}
+.spk-status{display:inline-block;margin:0 0 10px;padding:4px 10px;border-radius:20px;background:var(--mist);color:var(--soft);font-size:12px;font-weight:600}
+.spk-subnav{display:flex;flex-wrap:wrap;gap:6px 20px;margin:20px 0 24px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.spk-subnav a{font-size:13px;font-weight:700;color:var(--blue)}
+.spk-badges{margin:20px 0 0}
+.spk-badges small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
+.spk-badges div{display:flex;flex-wrap:wrap;gap:8px}
+.spk-tag{display:inline-flex;align-items:center;gap:7px;padding:5px 12px;border-radius:20px;background:#eef3ff;color:var(--blue);font-size:12px;font-weight:600}
+.spk-tag.soft{background:var(--mist);color:var(--soft)}
 .speaker-bio-inline{margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}
 .speaker-bio-inline h2,.speaker-appearances h2{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0 0 12px}
 .speaker-bio-inline p{max-width:62ch;font-size:16px;line-height:1.65}

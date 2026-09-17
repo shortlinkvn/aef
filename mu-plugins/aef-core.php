@@ -2013,6 +2013,69 @@ function aef_speaker_sessions( $speaker_id ) {
 	return $out;
 }
 
+/**
+ * Chủ đề liên quan tới 1 diễn giả — gộp từ trường 'tags' của các phiên họ tham
+ * gia (đã có sẵn ở metabox Phiên), bỏ trùng, tối đa $limit thẻ.
+ */
+function aef_speaker_topics( $speaker_id, $limit = 6 ) {
+	$sessions = aef_speaker_sessions( $speaker_id );
+	$tags     = array();
+	foreach ( $sessions as $row ) {
+		$raw = aef_meta( $row['id'], 'tags' );
+		if ( ! $raw ) {
+			continue;
+		}
+		foreach ( explode( ',', $raw ) as $t ) {
+			$t = trim( $t );
+			if ( '' !== $t && ! in_array( $t, $tags, true ) ) {
+				$tags[] = $t;
+			}
+		}
+	}
+	return array_slice( $tags, 0, $limit );
+}
+
+/**
+ * Diễn giả khác cùng nhóm vai trò (role_en/role_vi trùng nhau) — VD nhiều
+ * "Bộ trưởng các nước đối tác" một khi có tên thật sẽ tự xuất hiện ở đây.
+ * Hiện tại mỗi vai trò thường chỉ có 1 hồ sơ placeholder nên kết quả có thể
+ * rỗng — đúng như vậy, không phải lỗi.
+ */
+function aef_speaker_peers( $speaker_id, $limit = 4 ) {
+	$speaker_id = absint( $speaker_id );
+	$role_en    = trim( (string) aef_meta( $speaker_id, 'role_en' ) );
+	$role_vi    = trim( (string) aef_meta( $speaker_id, 'role_vi' ) );
+	if ( ! $role_en && ! $role_vi ) {
+		return array();
+	}
+	$meta_or = array( 'relation' => 'OR' );
+	if ( $role_en ) {
+		$meta_or[] = array( 'key' => 'role_en', 'value' => $role_en );
+	}
+	if ( $role_vi ) {
+		$meta_or[] = array( 'key' => 'role_vi', 'value' => $role_vi );
+	}
+	$q = new WP_Query(
+		array(
+			'post_type'      => 'aef_speaker',
+			'posts_per_page' => $limit + 1,
+			'post__not_in'   => array( $speaker_id ),
+			'orderby'        => 'menu_order title',
+			'meta_query'     => $meta_or,
+		)
+	);
+	$out = array();
+	while ( $q->have_posts() ) {
+		$q->the_post();
+		$out[] = get_the_ID();
+		if ( count( $out ) >= $limit ) {
+			break;
+		}
+	}
+	wp_reset_postdata();
+	return $out;
+}
+
 add_filter( 'wp_sitemaps_enabled', 'aef_sitemaps_enabled' );
 add_filter( 'users_can_register', '__return_false' );
 add_filter( 'xmlrpc_enabled', '__return_false' );
