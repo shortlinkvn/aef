@@ -20,9 +20,19 @@ Quản trị tại **AEF Content → Trang chủ**. 15/16 khối có đủ ảnh
 ## Chương trình / lịch trình phiên
 
 - **Nội dung từng phiên** (tên, giờ, phòng, diễn giả, tóm tắt...): sửa như 1 bài viết bình thường ở **Phiên** (CPT `aef_session`), có metabox riêng.
-- **Phòng**: dropdown 3 phòng cố định (mới thêm) — chọn từ danh sách, không gõ tay tự do nữa.
+- **Phòng**: dropdown 3 phòng cố định — chọn từ danh sách, không gõ tay tự do nữa.
+- **Nhà tài trợ phiên** ("Brought to you by"): field riêng trong metabox Phiên, hiện công khai trên trang phiên; để trống thì tự hiện "Đang cập nhật".
+- **Đầu mối liên hệ phiên**: có field (tên/SĐT/email) nhưng **chỉ admin thấy**, không hiện công khai — chờ BTC chốt có công khai hay không (xem Danh mục nội dung, Phần F).
 - **Thứ tự hiển thị + hiện/ẩn ở trang chủ**: màn **AEF Content → Sắp xếp chương trình** — kéo-thả theo từng ngày.
 - Trang `/programme/` (danh sách đầy đủ) tự động lấy đúng dữ liệu này, không cần sửa gì thêm.
+
+## Diễn giả
+
+Sửa như bài viết WordPress bình thường (CPT `aef_speaker`) — ô soạn thảo Anh/Việt ngay trên màn sửa bài. Trang `/speakers/` có sẵn ô tìm kiếm (tên/chức danh/tổ chức) và lọc theo quốc gia — tự động dùng được ngay khi thêm diễn giả mới, không cần cấu hình gì thêm.
+
+## Mốc đếm ngược (trang chủ)
+
+AEF Content → **Coming soon** — nay là bộ chọn ngày-giờ thật (trước đây gõ chữ tự do, dễ sai định dạng khiến countdown đứng im, đã sửa).
 
 ## Giới thiệu (About)
 
@@ -32,9 +42,9 @@ Quản trị tại **AEF Content → Giới thiệu**. Độ chi tiết field t�
 
 Quản trị tại **AEF Content → Chuyên đề**. Mỗi trụ cột có đủ: tiêu đề, tên ngắn, câu dẫn, mô tả ngắn (card), thân bài dài, câu hỏi dẫn dắt — cả Anh và Việt.
 
-## Đối tác / Tin & thông cáo / Diễn giả
+## Đối tác / Tin & thông cáo
 
-Sửa như bài viết WordPress bình thường (CPT `aef_partner` / `aef_story` / `aef_speaker`), có ô soạn thảo Anh/Việt ngay trên màn sửa bài — gõ vào hiện ra trên trang thật. Thứ tự & bật/tắt logo đối tác trên trang chủ: **AEF Content → Logo trang chủ**.
+Sửa như bài viết WordPress bình thường (CPT `aef_partner` / `aef_story`), có ô soạn thảo Anh/Việt ngay trên màn sửa bài — gõ vào hiện ra trên trang thật. Thứ tự & bật/tắt logo đối tác trên trang chủ: **AEF Content → Logo trang chủ**.
 
 ## Khung trang (menu, footer)
 
@@ -61,3 +71,7 @@ Phần mở đầu (tiêu đề, đoạn dẫn, ảnh) sửa tại **AEF Content
 Muốn đổi nội dung 5 trang này, báo lập trình viên (Claude hoặc người kế nhiệm) kèm nội dung mới — sửa trực tiếp trong file tương ứng, không có cách nào khác trong phạm vi kiến trúc hiện tại.
 
 **Lưu ý cho trang mới:** nếu tạo 1 trang WordPress mới (post_type "page") với slug KHÔNG trùng bất kỳ tên nào ở trên và không trùng `about`/`topics`/`partners`, hệ thống mặc định sẽ hiển thị đúng nội dung gõ trong ô soạn thảo Anh/Việt trên màn sửa trang — nghĩa là trang mới tự do gõ được ngay, không cần code.
+
+## Đường đi của code (cho người kế nhiệm việc kỹ thuật)
+
+Code theme/mu-plugins nằm ở repo GitHub `shortlinkvn/aef` (public). Mỗi lần có commit mới lên nhánh `main`, GitHub gọi webhook tới `https://aef.yea.vn/hooks/deploy.php`, server tự `git pull` + đồng bộ vào đúng `wp-content` (script `/home/aefdemo/aef-deploy.sh`) — gần như tức thời. Có thêm 1 cron job mỗi 1 phút chạy cùng script này làm lưới an toàn dự phòng nếu webhook lỗi. Không có bước thủ công nào ở giữa.
