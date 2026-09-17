@@ -460,6 +460,36 @@ function aef_home_block_hosts() {
 	<?php
 }
 
+function aef_home_block_wef() {
+	$eyebrow = aef_copy( 'home_wef_eyebrow' );
+	$title   = aef_copy( 'home_wef_title' );
+	$lead    = aef_copy( 'home_wef_lead' );
+	$items   = array_filter( array(
+		aef_copy( 'home_wef_item1' ),
+		aef_copy( 'home_wef_item2' ),
+		aef_copy( 'home_wef_item3' ),
+		aef_copy( 'home_wef_item4' ),
+	) );
+	if ( ! $title && ! $lead && ! $items ) {
+		return;
+	}
+	?>
+<section class="home-wef-band on-dark<?php echo esc_attr( aef_home_photo_class( 'home_wef_bg_id' ) ); ?>">
+  <?php aef_home_bg_div( 'home_wef_bg_id' ); ?>
+  <div class="home-wef-lock shell rv">
+    <?php if ( $eyebrow ) : ?><span class="eyebrow"><?php echo esc_html( $eyebrow ); ?></span><?php endif; ?>
+    <?php if ( $title ) : ?><h2><?php echo esc_html( $title ); ?></h2><?php endif; ?>
+    <?php if ( $lead ) : ?><p class="lede"><?php echo esc_html( $lead ); ?></p><?php endif; ?>
+    <?php if ( $items ) : ?>
+    <ul class="home-wef-list">
+      <?php foreach ( $items as $it ) : ?><li><?php echo esc_html( $it ); ?></li><?php endforeach; ?>
+    </ul>
+    <?php endif; ?>
+  </div>
+</section>
+	<?php
+}
+
 function aef_home_block_week() {
 	$days = get_terms( array( 'taxonomy' => 'aef_day', 'hide_empty' => false, 'orderby' => 'term_id' ) );
 	if ( is_wp_error( $days ) ) {
