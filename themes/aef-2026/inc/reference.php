@@ -221,6 +221,22 @@ function aef_support_faq() {
 			array( 'en' => 'How do I get support?', 'vi' => 'Làm thế nào để nhận hỗ trợ?' ),
 			array( 'en' => 'Write to the Secretariat at contact@aef.vn.', 'vi' => 'Liên hệ Ban thư ký qua địa chỉ contact@aef.vn.' ),
 		),
+		array(
+			array( 'en' => 'Does the Organising Committee help with hotel booking?', 'vi' => 'Ban Tổ chức có hỗ trợ đặt phòng khách sạn không?' ),
+			array( 'en' => 'The Travel guide lists a reference selection of hotels near the venue; booking and payment are the delegate’s own arrangement unless the invitation states otherwise.', 'vi' => 'Cẩm nang đi lại liệt kê danh sách khách sạn tham khảo gần địa điểm tổ chức; việc đặt phòng và thanh toán do đại biểu tự sắp xếp, trừ khi thư mời ghi khác.' ),
+		),
+		array(
+			array( 'en' => 'Is airport transfer provided?', 'vi' => 'Có dịch vụ đưa đón sân bay không?' ),
+			array( 'en' => 'The Travel guide sets out how to get from Tan Son Nhat Airport to the city and the venue. Any dedicated transfer arrangement is confirmed individually through the invitation.', 'vi' => 'Cẩm nang đi lại nêu cách di chuyển từ sân bay Tân Sơn Nhất tới trung tâm thành phố và địa điểm tổ chức. Dịch vụ đưa đón riêng (nếu có) được xác nhận theo từng thư mời.' ),
+		),
+		array(
+			array( 'en' => 'How does press accreditation work?', 'vi' => 'Thủ tục cấp thẻ tác nghiệp báo chí như thế nào?' ),
+			array( 'en' => 'International media register through the Ministry of Foreign Affairs; domestic media register through the Organising Committee. See the Media page for the current process.', 'vi' => 'Báo chí quốc tế đăng ký qua Bộ Ngoại giao; báo chí trong nước đăng ký qua Ban Tổ chức. Xem trang Báo chí để biết quy trình hiện hành.' ),
+		),
+		array(
+			array( 'en' => 'What language is used at the Forum?', 'vi' => 'Ngôn ngữ sử dụng tại Diễn đàn là gì?' ),
+			array( 'en' => 'Vietnamese and English, with interpretation for the Main Forum. This website itself defaults to English, with Vietnamese as the second language.', 'vi' => 'Tiếng Việt và tiếng Anh, có phiên dịch cho Diễn đàn chính. Website này mặc định hiển thị tiếng Anh, tiếng Việt là ngôn ngữ thứ hai.' ),
+		),
 	);
 }
 

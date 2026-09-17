@@ -21,7 +21,43 @@
     </a>
   </div>
 </section>
-<section class="blk mist" style="padding-top:48px">
+<section class="blk" style="padding-top:0">
+  <div class="shell">
+    <div class="quick-grid">
+      <a class="quick-tile" href="<?php echo esc_url( home_url( '/travel/#venue' ) ); ?>">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-5.2 7-11a7 7 0 0 0-14 0c0 5.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+        <b><?php echo esc_html( aef_t( array( 'en' => 'Venue', 'vi' => 'Địa điểm' ) ) ); ?></b>
+        <span><?php echo esc_html( aef_t( array( 'en' => 'Venue details and map', 'vi' => 'Thông tin venue và bản đồ' ) ) ); ?></span>
+      </a>
+      <a class="quick-tile" href="<?php echo esc_url( home_url( '/travel/#stay' ) ); ?>">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l6-4 6 4v13"/><path d="M9 21v-6h4v6"/><path d="M13 12h7v9"/></svg></span>
+        <b><?php echo esc_html( aef_t( array( 'en' => 'Stay', 'vi' => 'Lưu trú' ) ) ); ?></b>
+        <span><?php echo esc_html( aef_t( array( 'en' => 'Reference hotel list', 'vi' => 'Danh sách khách sạn tham khảo' ) ) ); ?></span>
+      </a>
+      <a class="quick-tile" href="<?php echo esc_url( home_url( '/travel/#move' ) ); ?>">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M6 17v3M18 17v3M5 17l1.5-6h11L19 17"/><circle cx="8" cy="20" r="1"/><circle cx="16" cy="20" r="1"/></svg></span>
+        <b><?php echo esc_html( aef_t( array( 'en' => 'Transport', 'vi' => 'Di chuyển' ) ) ); ?></b>
+        <span><?php echo esc_html( aef_t( array( 'en' => 'Airport to city guide', 'vi' => 'Hướng dẫn từ sân bay' ) ) ); ?></span>
+      </a>
+      <a class="quick-tile" href="#faq">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.9.4-1.5 1-1.5 2.2"/><circle cx="12" cy="17" r=".5" fill="currentColor"/></svg></span>
+        <b>FAQ</b>
+        <span><?php echo esc_html( aef_t( array( 'en' => 'Frequently asked questions', 'vi' => 'Câu hỏi thường gặp' ) ) ); ?></span>
+      </a>
+      <a class="quick-tile" href="mailto:contact@aef.vn">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg></span>
+        <b><?php echo esc_html( aef_t( array( 'en' => 'Contact', 'vi' => 'Liên hệ BTC' ) ) ); ?></b>
+        <span><?php echo esc_html( aef_t( array( 'en' => 'contact@aef.vn', 'vi' => 'contact@aef.vn' ) ) ); ?></span>
+      </a>
+      <a class="quick-tile" href="<?php echo esc_url( home_url( '/2026/support/media/' ) ); ?>">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 13h6M9 17h6"/></svg></span>
+        <b><?php echo esc_html( aef_t( array( 'en' => 'Press resources', 'vi' => 'Tài nguyên báo chí' ) ) ); ?></b>
+        <span><?php echo esc_html( aef_t( array( 'en' => 'Docs, images, logos', 'vi' => 'Tài liệu, hình ảnh, logo' ) ) ); ?></span>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="blk mist" id="faq" style="padding-top:0">
   <div class="shell">
     <div class="faq">
       <?php foreach ( aef_support_faq() as $faq ) : ?>

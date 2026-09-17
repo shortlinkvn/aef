@@ -827,6 +827,16 @@ a.pillar:hover h3{color:var(--blue)}
 .support-card span{font-size:11px;color:var(--blue);font-family:var(--mono)}
 .support-card h3{font-size:22px;text-transform:none;margin:36px 0 8px}
 .support-card p{font-size:14px;color:var(--soft);margin:0}
+.quick-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:0 0 56px}
+.quick-tile{display:flex;flex-direction:column;align-items:flex-start;gap:10px;background:#fff;padding:28px 20px;color:inherit}
+.quick-tile:hover{background:var(--mist)}
+.quick-tile:hover b{color:var(--blue)}
+.quick-tile .ic{width:38px;height:38px;border-radius:50%;background:var(--faint2,#EDF3FC);display:flex;align-items:center;justify-content:center;color:var(--blue)}
+.quick-tile .ic svg{width:20px;height:20px}
+.quick-tile b{display:block;font-size:15px;letter-spacing:-.01em}
+.quick-tile span{font-size:13px;color:var(--soft);line-height:1.4}
+@media (max-width:900px){.quick-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.quick-grid{grid-template-columns:repeat(2,1fr)}}
 .faq{max-width:900px}
 .faq details{border-top:1px solid var(--line);padding:16px 0}
 .faq details:last-child{border-bottom:1px solid var(--line)}
