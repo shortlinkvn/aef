@@ -1,4 +1,5 @@
 (function () {
+  var burger = document.querySelector('.burger');
   var nav = document.querySelector('.nav');
   var header = document.querySelector('.header');
   var scrim = document.getElementById('aef-nav-scrim');
