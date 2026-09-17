@@ -100,13 +100,64 @@ function aef_home_block_hero() {
 		: '2026-10-27T08:00:00+07:00';
 	?>
     <p class="hero-count-l"><?php echo esc_html( aef_t( array( 'en' => 'Countdown to the main Forum', 'vi' => 'Đếm ngược đến khai mạc Diễn đàn chính' ) ) ); ?></p>
-    <div class="hero-count" data-cx-count data-target="<?php echo esc_attr( $target ); ?>">
+    <div class="hero-count" id="aef-hero-count" data-target="<?php echo esc_attr( $target ); ?>">
       <div><b data-u="d">—</b><span><?php echo esc_html( aef_t( array( 'en' => 'Days', 'vi' => 'Ngày' ) ) ); ?></span></div>
       <div><b data-u="h">—</b><span><?php echo esc_html( aef_t( array( 'en' => 'Hours', 'vi' => 'Giờ' ) ) ); ?></span></div>
       <div><b data-u="m">—</b><span><?php echo esc_html( aef_t( array( 'en' => 'Minutes', 'vi' => 'Phút' ) ) ); ?></span></div>
       <div><b data-u="s">—</b><span><?php echo esc_html( aef_t( array( 'en' => 'Seconds', 'vi' => 'Giây' ) ) ); ?></span></div>
     </div>
-    <?php // Bộ đếm ngược chạy bằng assets/front.js (hàm aefBindCount), không cần script riêng ở đây nữa — trước đây có 2 bản logic giống hệt nhau chạy song song. ?>
+    <script>
+    (function () {
+      // Đặt ngay sau HTML của nó để phần tử chắc chắn đã tồn tại khi script này
+      // chạy — không phụ thuộc front.js tải xong trước hay sau. Đây là nơi DUY
+      // NHẤT xử lý countdown trên trang chủ (không còn bản nào khác trong
+      // front.js) để tránh 2 bản logic dẫm lên nhau như trước.
+      try {
+        var FALLBACK = '2026-10-27T00:00:00+07:00';
+        var box = document.getElementById('aef-hero-count');
+        if (!box) {
+          console.warn('[AEF countdown] Không tìm thấy #aef-hero-count trong DOM.');
+          return;
+        }
+        function parseTarget(raw) {
+          raw = String(raw || '').replace(/\s/g, '');
+          var t = Date.parse(raw);
+          if (!isNaN(t)) return t;
+          var m = raw.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})([+-]\d{2}):?(\d{2})$/);
+          if (m) {
+            var sign = m[7].charAt(0) === '-' ? -1 : 1;
+            var val = Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4] - parseInt(m[7], 10), +m[5] - sign * parseInt(m[8], 10), +m[6]);
+            if (!isNaN(val)) return val;
+          }
+          return NaN;
+        }
+        var rawTarget = box.getAttribute('data-target') || '';
+        var end = parseTarget(rawTarget);
+        if (isNaN(end)) {
+          console.warn('[AEF countdown] Không đọc được ngày "' + rawTarget + '", dùng mốc mặc định.');
+          end = parseTarget(FALLBACK);
+        }
+        function pad(n) { return n < 10 ? '0' + n : String(n); }
+        function tick() {
+          var left = Math.max(0, end - Date.now());
+          var s = Math.floor(left / 1000);
+          var d = Math.floor(s / 86400); s -= d * 86400;
+          var h = Math.floor(s / 3600); s -= h * 3600;
+          var m2 = Math.floor(s / 60); s -= m2 * 60;
+          var map = { d: String(d), h: pad(h), m: pad(m2), s: pad(s) };
+          var els = box.querySelectorAll('[data-u]');
+          for (var i = 0; i < els.length; i++) {
+            var k = els[i].getAttribute('data-u');
+            if (k && map[k] != null) els[i].textContent = map[k];
+          }
+        }
+        tick();
+        setInterval(tick, 1000);
+      } catch (e) {
+        console.error('[AEF countdown] Lỗi:', e);
+      }
+    })();
+    </script>
     </div>
     </div>
   </div>
