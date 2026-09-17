@@ -115,6 +115,20 @@ if ( in_array( $bucket, array( '1', '2', '3' ), true ) ) {
         <?php if ( $place ) : ?><div class="f"><small><?php echo esc_html( aef_t( array( 'en' => 'Venue', 'vi' => 'Địa điểm' ) ) ); ?></small><b><?php echo esc_html( $place ); ?></b></div><?php endif; ?>
         <?php if ( $fmt ) : ?><div class="f"><small><?php echo esc_html( aef_t( array( 'en' => 'Format', 'vi' => 'Hình thức' ) ) ); ?></small><b><?php echo esc_html( $fmt ); ?></b></div><?php endif; ?>
         <?php if ( $lead ) : ?><div class="f"><small><?php echo esc_html( in_array( $bucket, array( '1', '2', '3' ), true ) ? aef_t( array( 'en' => 'Coordinating ministry', 'vi' => 'Bộ, ngành phối hợp' ) ) : aef_t( array( 'en' => 'Chaired / coordinated by', 'vi' => 'Chủ trì / phối hợp' ) ) ); ?></small><b><?php echo esc_html( $lead ); ?></b></div><?php endif; ?>
+        <?php
+			$sponsor_name = trim( (string) aef_meta( $id, 'sponsor_name' ) );
+			$sponsor_url  = trim( (string) aef_meta( $id, 'sponsor_url' ) );
+		?>
+        <div class="f">
+          <small><?php echo esc_html( aef_t( array( 'en' => 'Brought to you by', 'vi' => 'Đồng hành cùng phiên' ) ) ); ?></small>
+          <?php if ( $sponsor_name && $sponsor_url ) : ?>
+          <b><a href="<?php echo esc_url( $sponsor_url ); ?>" target="_blank" rel="noopener"><?php echo esc_html( $sponsor_name ); ?></a></b>
+          <?php elseif ( $sponsor_name ) : ?>
+          <b><?php echo esc_html( $sponsor_name ); ?></b>
+          <?php else : ?>
+          <b><?php echo esc_html( aef_t( array( 'en' => 'Session sponsor — to be announced', 'vi' => 'Nhà tài trợ phiên — đang cập nhật' ) ) ); ?></b>
+          <?php endif; ?>
+        </div>
         <a class="btn btn-b" style="margin-top:8px;width:100%;justify-content:center" href="<?php echo esc_url( home_url( '/delegates/how-to-register/' ) ); ?>"><?php echo esc_html( aef_t( array( 'en' => 'How to attend', 'vi' => 'Cách tham dự' ) ) ); ?></a>
         <a class="text-link" style="margin-top:12px;display:inline-flex;color:#97DAFF" href="<?php echo esc_url( $parent[1] ); ?>"><?php echo esc_html( aef_t( array( 'en' => 'Back to programme', 'vi' => 'Trở lại chương trình' ) ) ); ?></a>
       </aside>

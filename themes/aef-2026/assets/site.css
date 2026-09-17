@@ -1447,6 +1447,12 @@ a.pillar{border:1px solid var(--line);min-height:100%}
 .venue-facts dt{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin:0 0 4px}
 .venue-facts dd{margin:0;font-size:15px;font-weight:600}
 .spk-banner{margin:0 0 28px;padding:16px 18px;border-left:3px solid var(--blue);background:var(--mist);max-width:72ch;font-size:15px;line-height:1.55;color:var(--soft)}
+.spk-filter{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 28px}
+.spk-filter .spk-search{flex:1 1 280px;min-width:0;padding:10px 14px;border:1px solid var(--line);border-radius:6px;font:15px/1.4 var(--body);color:var(--ink)}
+.spk-filter .spk-country{padding:10px 14px;border:1px solid var(--line);border-radius:6px;font:15px/1.4 var(--body);color:var(--ink);background:#fff}
+.spk-filter .spk-search:focus,.spk-filter .spk-country:focus{outline:2px solid var(--blue);outline-offset:1px}
+.spk-filter .spk-count{flex:0 0 100%;margin:2px 0 0;font-size:13px;color:var(--faint)}
+.spk-empty{padding:40px 0;text-align:center;color:var(--faint);font-size:15px}
 .oc-struct{margin-top:40px}
 .oc-struct .lead{max-width:62ch;margin:8px 0 22px}
 .ocrole{display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:center;padding:18px 0;border-top:1px solid var(--line)}

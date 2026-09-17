@@ -306,4 +306,39 @@
     if (reduceMotion && partnerTrack) partnerTrack.style.animation = 'none';
   }
 
+  // Trang Diễn giả: tìm theo tên/chức danh/tổ chức + lọc theo quốc gia — chỉ
+  // chạy khi trang có ô lọc (archive-aef_speaker.php), quy mô nhỏ (vài trăm
+  // thẻ) nên lọc thẳng trên trình duyệt, không cần gọi lại server.
+  var spkFilterRoot = document.querySelector('[data-spk-filter]');
+  if (spkFilterRoot) {
+    var spkList = document.querySelector('[data-spk-list]');
+    var spkCards = spkList ? Array.prototype.slice.call(spkList.querySelectorAll('[data-spk-search]')) : [];
+    var spkInput = spkFilterRoot.querySelector('[data-spk-search-input]');
+    var spkCountrySel = spkFilterRoot.querySelector('[data-spk-country-select]');
+    var spkCount = spkFilterRoot.querySelector('[data-spk-count]');
+    var spkEmpty = document.querySelector('[data-spk-empty]');
+    var spkTotal = spkCards.length;
+    function spkApply() {
+      var q = spkInput ? spkInput.value.trim().toLowerCase() : '';
+      var c = spkCountrySel ? spkCountrySel.value : '';
+      var shown = 0;
+      for (var i = 0; i < spkCards.length; i++) {
+        var card = spkCards[i];
+        var hitQ = !q || (card.getAttribute('data-spk-search') || '').indexOf(q) !== -1;
+        var hitC = !c || card.getAttribute('data-spk-country') === c;
+        var visible = hitQ && hitC;
+        card.style.display = visible ? '' : 'none';
+        if (visible) shown++;
+      }
+      if (spkCount) {
+        var tpl = (document.documentElement.getAttribute('lang') === 'vi') ? 'Hiển thị {shown} trên {total}' : 'Showing {shown} of {total}';
+        spkCount.textContent = tpl.replace('{shown}', String(shown)).replace('{total}', String(spkTotal));
+      }
+      if (spkEmpty) spkEmpty.hidden = shown !== 0;
+    }
+    if (spkInput) spkInput.addEventListener('input', spkApply);
+    if (spkCountrySel) spkCountrySel.addEventListener('change', spkApply);
+    spkApply();
+  }
+
 })();

@@ -234,6 +234,15 @@ function aef_session_box( $post ) {
 	echo '<p class="description">Sắp xếp kéo-thả hàng loạt: <a href="' . esc_url( admin_url( 'admin.php?page=aef-schedule-order' ) ) . '">Sắp xếp chương trình</a>.</p>';
 
 	aef_session_people_editor( $post->ID );
+
+	echo '<hr><p><strong>Nhà tài trợ phiên</strong> — hiện công khai ở trang phiên dưới dạng "Brought to you by". Để trống thì trang phiên tự hiện "Đang cập nhật".</p>';
+	aef_field( $post->ID, 'sponsor_name', 'Tên nhà tài trợ' );
+	aef_field( $post->ID, 'sponsor_url', 'Link nhà tài trợ (không bắt buộc)' );
+
+	echo '<hr><p><strong>Đầu mối liên hệ phiên</strong> — <em>chỉ admin thấy, KHÔNG hiện trên trang công khai</em>. BTC chưa chốt có công khai SĐT/email trên web hay không (xem Danh mục nội dung, Phần F) — để mặc định nội bộ cho an toàn.</p>';
+	aef_field( $post->ID, 'contact_name', 'Tên người phụ trách' );
+	aef_field( $post->ID, 'contact_phone', 'Điện thoại' );
+	aef_field( $post->ID, 'contact_email', 'Email' );
 }
 
 function aef_speaker_choices() {
@@ -382,7 +391,7 @@ function aef_save_metaboxes( $post_id ) {
 		}
 	}
 	if ( isset( $_POST['aef_ses_nonce'] ) && wp_verify_nonce( $_POST['aef_ses_nonce'], 'aef_ses' ) ) {
-		$text = array( 'session_id', 'kind', 'date_label', 'time', 'format_en', 'format_vi', 'lead_en', 'lead_vi', 'access_en', 'access_vi', 'status', 'tags' );
+		$text = array( 'session_id', 'kind', 'date_label', 'time', 'format_en', 'format_vi', 'lead_en', 'lead_vi', 'access_en', 'access_vi', 'status', 'tags', 'sponsor_name', 'sponsor_url', 'contact_name', 'contact_phone', 'contact_email' );
 		foreach ( $text as $key ) {
 			if ( isset( $_POST[ $key ] ) ) {
 				update_post_meta( $post_id, $key, sanitize_text_field( wp_unslash( $_POST[ $key ] ) ) );

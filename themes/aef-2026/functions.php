@@ -123,7 +123,7 @@ function aef_editions_query( $args = array() ) {
 function aef_speaker_public_args( $args = array() ) {
 	$defaults = array(
 		'post_type'      => 'aef_speaker',
-		'posts_per_page' => 80,
+		'posts_per_page' => 400,
 		'orderby'        => 'menu_order title',
 	);
 	return array_merge( $defaults, $args );
